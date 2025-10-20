@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darsana R</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F8F8F8;
+            overflow-x: hidden;
+        }
+
+        /* Updated curve-desktop for a stylish, modern look */
+        .curve-desktop {
+            /* This is the large screen style */
+            border-bottom-left-radius: 200px;
+            border-top-left-radius: 50px;
+        }
+
+        @media (max-width: 1023px) {
+
+            /* Applies to tablet (md) and mobile (sm/default) */
+            .curve-desktop {
+                border-radius: 0;
+                border-top-left-radius: 100px;
+                border-top-right-radius: 100px;
+            }
+        }
+
+        /* Adjusted hero-image styles for better fit within a dynamic height container */
+        .hero-image {
+            transform: translateY(0);
+            object-fit: cover;
+            width: 100%;
+            max-width: none;
+            height: 100%;
+            /* Fill container height dynamically */
+            border-radius: 0;
+        }
+
+        /* Removed fixed heights from your custom CSS for lg screens */
+        @media (min-width: 1024px) {
+
+            /* We rely on the flex-1 and the surrounding content's height to define the image container's height */
+            .lg\:-ml-6 {
+                margin-left: -0.5rem;
+            }
+        }
+
+        /* Mobile menu styles remain effective */
+        .mobile-menu-overlay {
+            z-index: 60;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease-out;
+            display: flex;
+        }
+
+        .mobile-menu-overlay.is-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-menu-overlay .menu-content {
+            transform: translateY(-100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            height: 100%;
+            width: 100%;
+        }
+
+        .mobile-menu-overlay.is-open .menu-content {
+            transform: translateY(0);
+        }
+
+        /* Custom Styles for New Sections */
+        .service-boxes {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .service-boxes {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .service-boxes {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        .service-box {
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #F59E0B;
+            /* Amber-500 equivalent */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Center box content, as requested for new box sections */
+            text-align: center;
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1F2937;
+            /* Gray-800 equivalent */
+        }
+
+        .service-box p {
+            font-size: 1rem;
+            color: #4B5563;
+            /* Gray-600 equivalent */
+        }
+
+        .article-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            max-width: 6xl;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .article-container article {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: 80px;
+            /* Standard size for an icon box */
+        }
+
+        .article-container article:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-icon {
+            width: 100%;
+            height: 50px;
+            /* Fixed height for the image */
+            object-fit: contain;
+            /* Ensure the image fits without cropping and maintains aspect ratio */
+        }
+
+        .section__text__p1 {
+            text-align: center;
+            color: #6B7280;
+            /* Gray-500 */
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Custom CSS to justify text in the About section */
+        #about p {
+            text-align: justify;
+            text-justify: inter-word;
+            /* Better justification control for some browsers */
+        }
+
+        /* Center align content in new box sections: projects, involvement, achievements (certifications) */
+        .project-box-content,
+        .involvement-box,
+        .achievement-box {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <a href="#" class="text-2xl font-extrabold text-gray-800 tracking-tight">
+                Darsana R
+            </a>
+
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#projects"
+                            class="text-gray-600 hover:text-amber-500 font-medium transition duration-150 desktop-link">Projects</a></li>
+                    <li><a href="#services"
+                            class="text-gray-600 hover:text-amber-500 font-medium transition duration-150 desktop-link">Services</a>
+                    </li>
+                            <li><a href="#skills"
+                            class="text-gray-600 hover:text-amber-500 font-medium transition duration-150 desktop-link">Skills</a>
+                    </li>
+                    <li><a href="#achievements"
+                            class="text-gray-600 hover:text-amber-500 font-medium transition duration-150 desktop-link">Recognition</a>
+                    </li>
+                    
+                    <li><a href="#contact"
+                            class="text-gray-600 hover:text-amber-500 font-medium transition duration-150 desktop-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button id="menu-button"
+                class="md:hidden p-2 rounded-lg text-gray-800 hover:bg-gray-100 transition duration-150">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="mobile-menu-overlay fixed inset-0 bg-white bg-opacity-95 justify-center items-center">
+        <div class="menu-content p-8 pt-20 flex flex-col items-center justify-center">
+
+            <button id="close-button" class="absolute top-5 right-5 p-2 text-gray-800 hover:bg-gray-100 rounded-lg">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+
+            <nav class="flex flex-col space-y-8 text-center">
+                <a href="#about"
+                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">About
+                    Me</a>
+                <a href="#education"
+                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">Academics</a>
+                <a href="#achievements"
+                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">Recognition</a>
+                <a href="#services"
+                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">Involvement</a>
+                <a href="#projects"
+                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">My
+                    Work</a>
+                <a href="#skills"
+                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">Toolbox</a>
+                <a href="#contact"
+                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">Get
+                    in Touch</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="min-h-screen pt-20 flex flex-col lg:flex-row bg-white">
+
+        <div class="flex-1 flex flex-col justify-center items-start p-8 lg:pl-16 lg:py-16 order-2 lg:order-1">
+            <p class="text-sm font-semibold tracking-widest text-gray-500 uppercase mb-3">
+                Future-Forward Technologist | AI & ML Enthusiast
+            </p>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+                Hi, I'm <br>
+                <span class="text-amber-500">Darsana R</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-10 max-w-lg">
+                I’m a passionate IT undergrad driven by curiosity and creativity. From coding intelligent systems to
+                crafting meaningful user experiences, I love bringing ideas to life with Python, Java, and C.
+            </p>
+
+            <div class="flex space-x-4">
+                <a href="#projects"
+                    class="px-8 py-3 bg-amber-500 text-gray-800 font-bold rounded-lg shadow-lg hover:bg-amber-600 transition duration-300 transform hover:scale-105 desktop-link">
+                    Explore My Projects
+                </a>
+                <a href="https://linkedin.com/in/darsanar" target="_blank"
+                    class="px-8 py-3 bg-white text-gray-800 font-bold rounded-lg border-2 border-gray-300 hover:border-amber-500 hover:text-amber-500 transition duration-300">
+                    Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+
+        <div
+            class="flex-1 bg-amber-400 curve-desktop flex justify-center items-end relative overflow-hidden order-1 lg:order-2 h-96 lg:h-auto lg:-ml-6">
+            <img src="images/darsana-.png" alt="Darsana R - IT Student" class="hero-image">
+        </div>
+    </main>
+
+    <section id="about" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto bg-gray-50 rounded-lg shadow-inner mt-10">
+        <h2 class="text-4xl font-extrabold text-center mb-12">My Developer Journey </h2>
+        <div class="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+            <p class="mb-6">
+                Hi there! I'm a developer and designer who loves making digital things
+                that are not just useful but also look great and are
+                easy to use. I combine my tech skills with creative
+                ideas to build websites, apps, and designs that
+                truly connect with people. My passion is turning
+                complex challenges into simple, beautiful solutions
+                that work perfectly. I focus on creating online experiences that are
+                smooth and enjoyable for everyone, making sure your ideas shine
+                brightly and leave a lasting impression on your audience.
+            </p>
+            <p class="mb-6">
+                I thrive at the intersection of logic and creativity — designing smart, data-driven applications that
+                make a real-world impact. My journey in AI and ML has taught me to blend analytical thinking with
+                user-focused design.
+            </p>
+            <p>
+                Beyond code, I’m a strong communicator and team player. I enjoy taking initiative, leading projects, and
+                collaborating to turn innovative ideas into tangible outcomes.
+            </p>
+        </div>
+    </section>
+
+    
+    <section id="projects" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto bg-gray-50 rounded-lg shadow-inner">
+        <h2 class="text-4xl font-extrabold text-center mb-4">My Projects</h2>
+        <p class="text-center text-lg text-gray-500 mb-12">A glimpse into my hands-on work — from smart algorithms to
+            full-stack platforms.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
+                <img src="images/p-corbeat.png"
+                    alt="CorBeat Heart Disease Predictor Project Image" class="w-full h-80 object-cover">
+                <div class="p-6 border-t-4 border-amber-500">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">CorBeat – Heart Disease Predictor</h3>
+                    <p class="text-gray-600 mb-4">Predictive model using Random Forest achieving 94.5% accuracy for
+                        heart disease detection. Backend built using Flask for real-time inference.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Darsana-Ramesh/HeartDiseasePrediction-ML" target="_blank"
+                            class="text-amber-500 hover:underline font-medium flex items-center">
+                            GitHub <i data-lucide="github" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
+                <img src="images/p-resume.png"
+                    alt="ResumeLens AI Talent Scout Project Image" class="w-full h-80 object-cover">
+                <div class="p-6 border-t-4 border-amber-500">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">ResumeLens - AI Talent Scout</h3>
+                    <p class="text-gray-600 mb-4">AI-powered tool using Google Gemini API for PDF parsing, skill
+                        extraction, and automated, personalized cover letter generation for recruiters.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Darsana-Ramesh/ResumeLens-ai-powered-resume-analyzer" target="_blank"
+                            class="text-amber-500 hover:underline font-medium flex items-center">
+                            GitHub <i data-lucide="github" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
+                <img src="images/p-flow.jpg"
+                    alt="AI Algorithm and Code Generator Project Image" class="w-full h-80 object-cover">
+                <div class="p-6 border-t-4 border-amber-500">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">AI Algorithm + Code Generator</h3>
+                    <p class="text-gray-600 mb-4">Translates natural language problems into algorithms, Mermaid
+                        flowcharts, and minimal code (Python, Java, C++, etc.) using the Google Gemini API.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Darsana-Ramesh/Logic_solver_ai" target="_blank"
+                            class="text-amber-500 hover:underline font-medium flex items-center">
+                            GitHub <i data-lucide="github" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
+                <img src="images/p-canteen.jpeg"
+                    alt="CanteenExpress Management System Project Image" class="w-full h-80 object-cover">
+                <div class="p-6 border-t-4 border-amber-500">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">CanteenExpress – Full-Stack CMS</h3>
+                    <p class="text-gray-600 mb-4">Web-based system for digital food ordering and admin management (sales
+                        reports, inventory). Built with a highly normalized relational database (3NF).</p>
+                    <div class="flex space-x-4">
+                        <!-- <a href="#" class="text-amber-500 hover:underline font-medium flex items-center">
+                            View Landing <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                        </a> -->
+                        <a href="https://github.com/Darsana-Ramesh/CanteenExpress" target="_blank"
+                            class="text-amber-500 hover:underline font-medium flex items-center">
+                            GitHub <i data-lucide="github" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="https://github.com/Darsana-Ramesh" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-amber-600 hover:bg-amber-700 shadow-xl transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"> More Projects
+            <i data-lucide="github" class="w-5 h-5 ml-2"></i>
+            </a>
+        </div>
+    </section>
+<section id="services" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
+        <div class="what-i-do-container">
+            <h2 class="text-4xl font-extrabold text-center mb-4">What I Do</h2>
+            <p class="text-center text-lg text-gray-500 mb-12">My expertise across the development and design spectrum
+            </p>
+            <div class="service-boxes">
+                <div class="service-box">
+                    <h3>Web Development</h3>
+                    <p>I build modern, high-performance websites that look great and work flawlessly on any device, from
+                        dynamic applications to robust e-commerce solutions.</p>
+                </div>
+                <div class="service-box">
+                    <h3>UI/UX Design</h3>
+                    <p>I dive into user journeys to design interfaces that feel intuitive and look stunning. It’s not
+                        just about
+                        looks — it’s about creating experiences people remember.</p>
+                </div>
+
+
+                <div class="service-box">
+                    <h3>Graphic Design</h3>
+                    <p>I craft compelling visuals—from brand identities to social media graphics—that capture attention
+                        and tell your brand's unique story with style.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Mentoring</h3>
+                    <p>I guide beginners through the world of code and design,
+                        helping them grow with real-world insights and hands-on support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-extrabold text-center mb-4">Tech Stack & Skills</h2>
+        <p class="text-center text-lg text-gray-500 mb-12">
+            Tools, languages, and frameworks I use to bring ideas to life
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+            <!-- Programming Languages -->
+            <div
+                class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>Python</span>
+            </div>
+            <div
+                class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>Java</span>
+            </div>
+            <div
+                class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>C</span>
+            </div>
+            <div
+                class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>R Programming</span>
+            </div>
+
+            <!-- Web Development -->
+            <div
+                class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>HTML5</span>
+            </div>
+            <div
+                class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>CSS3</span>
+            </div>
+            <div
+                class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>JavaScript</span>
+            </div>
+            <div
+                class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>Bootstrap</span>
+            </div>
+            <div
+                class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>Flask</span>
+            </div>
+            <div
+                class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>PHP</span>
+            </div>
+
+            <!-- Data Science & ML -->
+            <div
+                class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>Scikit-learn</span>
+            </div>
+            <div
+                class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>Pandas</span>
+            </div>
+            <div
+                class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>NumPy</span>
+            </div>
+            <div
+                class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>Matplotlib</span>
+            </div>
+
+            <!-- Databases -->
+            <div
+                class="flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>MySQL</span>
+            </div>
+
+            <!-- Tools & Platforms -->
+            <div
+                class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>Git</span>
+            </div>
+            <div
+                class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>GitHub</span>
+            </div>
+            <div
+                class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>VS Code</span>
+            </div>
+            <div
+                class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>Google Colab</span>
+            </div>
+            <div
+                class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                <span>Figma</span>
+            </div>
+    </section>
+
+    <section id="education" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-extrabold text-center mb-4">Academic Journey</h2>
+        <p class="text-center text-lg text-gray-500 mb-12">Building a strong foundation for future innovations.</p>
+
+        <div class="space-y-8 max-w-3xl mx-auto">
+            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500">
+                <div class="flex justify-between items-center mb-2 flex-wrap">
+                    <h3 class="text-2xl font-bold text-gray-800">B.Tech in Information Technology</h3>
+                    <span
+                        class="text-sm font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full mt-2 sm:mt-0">2022
+                        - 2026</span>
+                </div>
+                <p class="text-lg font-medium text-gray-700 mb-1">Government Engineering College Palakkad</p>
+                <p class="text-sm text-gray-500">Current CGPA: 9.52/10 – striving for excellence through curiosity and
+                    hard work.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500">
+                <div class="flex justify-between items-center mb-2 flex-wrap">
+                    <h3 class="text-2xl font-bold text-gray-800">Higher Secondary Education (Class XII)</h3>
+                    <span
+                        class="text-sm font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full mt-2 sm:mt-0">2020
+                        - 2022</span>
+                </div>
+                <p class="text-lg font-medium text-gray-700 mb-1">Government Higher Secondary School Pattambi</p>
+                <p class="text-sm text-gray-500">Score: 99.33% – consistency, focus, and determination defined this
+                    chapter.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-extrabold text-center mb-4 text-gray-800">Certifications & Honors</h2>
+        <p class="text-center text-lg text-gray-500 mb-12">Highlights of my learning journey and technical milestones.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+            <div
+                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition duration-300">
+
+                <h3 class="text-2xl font-bold mb-3">NPTEL Database Management Systems (IIT Kharagpur)</h3>
+                <p class="text-gray-600">
+                    Achieved a top ranking, placing in the top 5% among 7,000+ national learners, demonstrating an
+                    excellent grasp of database systems and SQL fundamentals.
+                </p>
+            </div>
+
+            <div
+                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition duration-300">
+
+                <h3 class="text-2xl font-bold mb-3">Infosys Springboard Python Internship 2025</h3>
+                <p class="text-gray-600">
+                    Selected for this highly competitive and prestigious corporate internship program focused on
+                    developing practical, industry-ready Python application skills.
+                </p>
+            </div>
+
+            <div
+                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition duration-300">
+
+                <h3 class="text-2xl font-bold mb-3">Python Programming Certification</h3>
+                <p class="text-gray-600">
+                    Successfully completed the comprehensive Python curriculum via Infosys Springboard, validating core
+                    proficiency in object-oriented programming and development techniques.
+                </p>
+            </div>
+    </section>
+
+<section id="involvement" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-extrabold text-center mb-4">Leadership & Volunteering</h2>
+        <p class="text-center text-lg text-gray-500 mb-12">Empowering teams and communities through collaboration and
+            purpose.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div
+                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition duration-300">
+                <i data-lucide="users" class="w-10 h-10 text-amber-500 mb-4"></i>
+                <h3 class="text-2xl font-bold mb-3">ISTE Department Head</h3>
+                <p class="text-gray-600">
+                    Spearheaded the departmental chapter for the Indian Society for Technical Education (ISTE) at GEC,
+                    Palakkad. Successfully led a team of 10+ members to organize and execute various technical events.
+                </p>
+            </div>
+
+            <div
+                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition duration-300">
+                <i data-lucide="heart" class="w-10 h-10 text-amber-500 mb-4"></i>
+                <h3 class="text-2xl font-bold mb-3">NSS Volunteer</h3>
+                <p class="text-gray-600">
+                    Actively volunteered with the National Service Scheme (NSS), dedicating time to impactful community
+                    development and social service projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto bg-amber-400 rounded-xl shadow-2xl mb-10">
+        <h2 class="text-4xl font-extrabold text-white text-center mb-4">Let’s Collaborate!</h2>
+        <p class="text-center text-lg text-gray-800 mb-12 max-w-2xl mx-auto">
+            Have an exciting project or opportunity in mind? I’d love to hear about it! Drop me a mail or
+            connect with me through my professional profiles.
+        </p>
+
+        <!-- <form class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-xl space-y-6">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                <input type="text" id="name" name="name"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500"
+                    placeholder="Your Name">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                <input type="email" id="email" name="email"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500"
+                    placeholder="your@email.com">
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                <textarea id="message" name="message" rows="4"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500"
+                    placeholder="Tell me about your opportunity..."></textarea>
+            </div>
+            <button type="submit"
+                class="w-full py-3 bg-gray-800 text-white font-bold rounded-lg hover:bg-gray-700 transition duration-300 shadow-lg transform hover:scale-[1.01]">
+                Send Message
+            </button>
+        </form> -->
+
+        <div class="flex flex-wrap justify-center gap-y-4 gap-x-8 mt-10">
+            <a href="mailto:hello@darsana.com"
+                class="text-gray-800 hover:text-white transition duration-300 flex items-center font-medium">
+                <i data-lucide="mail" class="w-6 h-6 mr-2"></i> darsanadr04@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/darsanar" target="_blank"
+                class="text-gray-800 hover:text-white transition duration-300 flex items-center font-medium">
+                <i data-lucide="linkedin" class="w-6 h-6 mr-2"></i> LinkedIn
+            </a>
+            <a href="https://github.com/Darsana-Ramesh" target="_blank"
+                class="text-gray-800 hover:text-white transition duration-300 flex items-center font-medium">
+                <i data-lucide="github" class="w-6 h-6 mr-2"></i> GitHub
+            </a>
+        </div>
+    </section>
+
+    <footer class="text-center py-6 text-sm text-gray-500 bg-white shadow-inner">
+        &copy; 2025 Darsana R. All rights reserved. Built with passion and code.
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const menuButton = document.getElementById('menu-button');
+        const closeButton = document.getElementById('close-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = document.querySelectorAll('.menu-link');
+        const desktopLinks = document.querySelectorAll('.desktop-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('is-open');
+            const isOpen = mobileMenu.classList.contains('is-open');
+            // Prevent scrolling when the menu is open
+            document.body.classList.toggle('overflow-hidden', isOpen);
+        }
+
+        menuButton.addEventListener('click', toggleMenu);
+        closeButton.addEventListener('click', toggleMenu);
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Close the menu after a link is clicked
+                setTimeout(toggleMenu, 100);
+            });
+        });
+
+        // Optional: Close menu when clicking desktop links (though not strictly necessary)
+        // desktopLinks.forEach(link => {
+        //     link.addEventListener('click', function(e) {
+        //     });
+        // });
+    </script>
+</body>
+
+</html>
