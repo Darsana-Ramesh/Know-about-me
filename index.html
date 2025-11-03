@@ -9,11 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
     <style>
-        /* ... (Keep your existing styles unchanged) ... */
         html {
             scroll-behavior: smooth;
         }
@@ -135,16 +131,6 @@
             font-size: 1rem;
             color: #4B5563;
             /* Gray-600 equivalent */
-        }
-        
-        /* === Hover Effect Styles (applied to all cards) === */
-        .card-hover-effect {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card-hover-effect:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
         }
 
         .article-container {
@@ -270,8 +256,8 @@
     </div>
 
     <main class="min-h-screen pt-20 flex flex-col lg:flex-row bg-white">
-        <div class="flex-1 flex flex-col justify-center items-start p-8 lg:pl-16 lg:py-16 order-2 lg:order-1"
-             data-aos="fade-right" data-aos-duration="1000">
+
+        <div class="flex-1 flex flex-col justify-center items-start p-8 lg:pl-16 lg:py-16 order-2 lg:order-1">
             <p class="text-sm font-semibold tracking-widest text-gray-500 uppercase mb-3">
                 Future-Forward Technologist | AI & ML Enthusiast
             </p>
@@ -297,14 +283,12 @@
         </div>
 
         <div
-            class="flex-1 bg-amber-400 curve-desktop flex justify-center items-end relative overflow-hidden order-1 lg:order-2 h-96 lg:h-auto lg:-ml-6"
-            data-aos="fade-left" data-aos-duration="1000">
+            class="flex-1 bg-amber-400 curve-desktop flex justify-center items-end relative overflow-hidden order-1 lg:order-2 h-96 lg:h-auto lg:-ml-6">
             <img src="images/darsana-.png" alt="Darsana R - IT Student" class="hero-image">
         </div>
     </main>
 
-    <section id="about" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto bg-gray-50 rounded-lg shadow-inner mt-10"
-             data-aos="fade-up" data-aos-duration="1000">
+    <section id="about" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto bg-gray-50 rounded-lg shadow-inner mt-10">
         <h2 class="text-4xl font-extrabold text-center mb-12">My Developer Journey </h2>
         <div class="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
             <p class="mb-6">
@@ -332,13 +316,14 @@
 
     
     <section id="projects" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto bg-gray-50 rounded-lg shadow-inner">
-        <h2 class="text-4xl font-extrabold text-center mb-4" data-aos="fade-down">My Projects</h2>
-        <p class="text-center text-lg text-gray-500 mb-12" data-aos="fade-down" data-aos-delay="100">A glimpse into my hands-on work — from smart algorithms to
+        <h2 class="text-4xl font-extrabold text-center mb-4">My Projects</h2>
+        <p class="text-center text-lg text-gray-500 mb-12">A glimpse into my hands-on work — from smart algorithms to
             full-stack platforms.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-effect"
-                 data-aos="fade-up" data-aos-delay="200">
+
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
                 <img src="images/p-corbeat.png"
                     alt="CorBeat Heart Disease Predictor Project Image" class="w-full h-80 object-cover">
                 <div class="p-6 border-t-4 border-amber-500">
@@ -354,8 +339,7 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-effect"
-                 data-aos="fade-up" data-aos-delay="400">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
                 <img src="images/p-resume.png"
                     alt="ResumeLens AI Talent Scout Project Image" class="w-full h-80 object-cover">
                 <div class="p-6 border-t-4 border-amber-500">
@@ -371,8 +355,7 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-effect"
-                 data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
                 <img src="images/p-flow.png"
                     alt="AI Algorithm and Code Generator Project Image" class="w-full h-80 object-cover">
                 <div class="p-6 border-t-4 border-amber-500">
@@ -388,8 +371,7 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-effect"
-                 data-aos="fade-up" data-aos-delay="400">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
                 <img src="images/p-canteen.jpeg"
                     alt="CanteenExpress Management System Project Image" class="w-full h-80 object-cover">
                 <div class="p-6 border-t-4 border-amber-500">
@@ -397,6 +379,9 @@
                     <p class="text-gray-600 mb-4">Web-based system for digital food ordering and admin management (sales
                         reports, inventory). Built with a highly normalized relational database (3NF).</p>
                     <div class="flex space-x-4">
+                        <!-- <a href="#" class="text-amber-500 hover:underline font-medium flex items-center">
+                            View Landing <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                        </a> -->
                         <a href="https://github.com/Darsana-Ramesh/CanteenExpress" target="_blank"
                             class="text-amber-500 hover:underline font-medium flex items-center">
                             GitHub <i data-lucide="github" class="w-4 h-4 ml-1"></i>
@@ -405,8 +390,7 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-effect"
-                 data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
                 <img src="images/p_5.png"
                     alt="predicting fate" class="w-full h-80 object-cover">
                 <div class="p-6 border-t-4 border-amber-500">
@@ -430,8 +414,7 @@
 
 
 
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-effect"
-                 data-aos="fade-up" data-aos-delay="400">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
                 <img src="images/p_6.png"
                     alt="portfolio v1" class="w-full h-80 object-cover">
                 <div class="p-6 border-t-4 border-amber-500">
@@ -454,25 +437,24 @@
                 </div>
             </div>
         </div>
-        <div class="text-center mt-12" data-aos="fade-up">
+        <div class="text-center mt-12">
             <a href="https://github.com/Darsana-Ramesh" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-amber-600 hover:bg-amber-700 shadow-xl transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"> More Projects
             <i data-lucide="github" class="w-5 h-5 ml-2"></i>
             </a>
         </div>
     </section>
-
 <section id="services" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
         <div class="what-i-do-container">
-            <h2 class="text-4xl font-extrabold text-center mb-4" data-aos="fade-down">What I Do</h2>
-            <p class="text-center text-lg text-gray-500 mb-12" data-aos="fade-down" data-aos-delay="100">My expertise across the development and design spectrum
+            <h2 class="text-4xl font-extrabold text-center mb-4">What I Do</h2>
+            <p class="text-center text-lg text-gray-500 mb-12">My expertise across the development and design spectrum
             </p>
             <div class="service-boxes">
-                <div class="service-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-box">
                     <h3>Web Development</h3>
                     <p>I build modern, high-performance websites that look great and work flawlessly on any device, from
                         dynamic applications to robust e-commerce solutions.</p>
                 </div>
-                <div class="service-box" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-box">
                     <h3>UI/UX Design</h3>
                     <p>I dive into user journeys to design interfaces that feel intuitive and look stunning. It’s not
                         just about
@@ -480,12 +462,12 @@
                 </div>
 
 
-                <div class="service-box" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-box">
                     <h3>Graphic Design</h3>
                     <p>I craft compelling visuals—from brand identities to social media graphics—that capture attention
                         and tell your brand's unique story with style.</p>
                 </div>
-                <div class="service-box" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-box">
                     <h3>Mentoring</h3>
                     <p>I guide beginners through the world of code and design,
                         helping them grow with real-world insights and hands-on support.</p>
@@ -493,14 +475,14 @@
             </div>
         </div>
     </section>
-
     <section id="skills" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-extrabold text-center mb-4" data-aos="fade-down">Tech Stack & Skills</h2>
-        <p class="text-center text-lg text-gray-500 mb-12" data-aos="fade-down" data-aos-delay="100">
+        <h2 class="text-4xl font-extrabold text-center mb-4">Tech Stack & Skills</h2>
+        <p class="text-center text-lg text-gray-500 mb-12">
             Tools, languages, and frameworks I use to bring ideas to life
         </p>
 
-        <div class="flex flex-wrap justify-center gap-4 md:gap-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+            <!-- Programming Languages -->
             <div
                 class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
                 <span>Python</span>
@@ -518,6 +500,7 @@
                 <span>R Programming</span>
             </div>
 
+            <!-- Web Development -->
             <div
                 class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
                 <span>HTML5</span>
@@ -543,6 +526,7 @@
                 <span>PHP</span>
             </div>
 
+            <!-- Data Science & ML -->
             <div
                 class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
                 <span>Scikit-learn</span>
@@ -560,11 +544,13 @@
                 <span>Matplotlib</span>
             </div>
 
+            <!-- Databases -->
             <div
                 class="flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
                 <span>MySQL</span>
             </div>
 
+            <!-- Tools & Platforms -->
             <div
                 class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
                 <span>Git</span>
@@ -588,11 +574,11 @@
     </section>
 
     <section id="education" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-extrabold text-center mb-4" data-aos="fade-down">Academic Journey</h2>
-        <p class="text-center text-lg text-gray-500 mb-12" data-aos="fade-down" data-aos-delay="100">Building a strong foundation for future innovations.</p>
+        <h2 class="text-4xl font-extrabold text-center mb-4">Academic Journey</h2>
+        <p class="text-center text-lg text-gray-500 mb-12">Building a strong foundation for future innovations.</p>
 
         <div class="space-y-8 max-w-3xl mx-auto">
-            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500 card-hover-effect" data-aos="fade-right" data-aos-delay="200">
+            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500">
                 <div class="flex justify-between items-center mb-2 flex-wrap">
                     <h3 class="text-2xl font-bold text-gray-800">B.Tech in Information Technology</h3>
                     <span
@@ -603,7 +589,7 @@
                 <p class="text-sm text-gray-500">Current CGPA: 9.52/10</p>
             </div>
 
-            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500 card-hover-effect" data-aos="fade-left" data-aos-delay="300">
+            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500">
                 <div class="flex justify-between items-center mb-2 flex-wrap">
                     <h3 class="text-2xl font-bold text-gray-800">Higher Secondary Education (Class XII)</h3>
                     <span
@@ -617,15 +603,14 @@
     </section>
 
     <section id="achievements" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-extrabold text-center mb-4 text-gray-800" data-aos="fade-down">Certifications & Honors</h2>
-        <p class="text-center text-lg text-gray-500 mb-12" data-aos="fade-down" data-aos-delay="100">Highlights of my learning journey and technical milestones.
+        <h2 class="text-4xl font-extrabold text-center mb-4 text-gray-800">Certifications & Honors</h2>
+        <p class="text-center text-lg text-gray-500 mb-12">Highlights of my learning journey and technical milestones.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
 
             <div
-                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 card-hover-effect"
-                data-aos="fade-up" data-aos-delay="200">
+                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition duration-300">
 
                 <h3 class="text-2xl font-bold mb-3">NPTEL Database Management Systems (IIT Kharagpur)</h3>
                 <p class="text-gray-600">
@@ -635,8 +620,7 @@
             </div>
 
             <div
-                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 card-hover-effect"
-                data-aos="fade-up" data-aos-delay="300">
+                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition duration-300">
 
                 <h3 class="text-2xl font-bold mb-3">Infosys Springboard Python Internship 2025</h3>
                 <p class="text-gray-600">
@@ -646,8 +630,7 @@
             </div>
 
             <div
-                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 card-hover-effect"
-                data-aos="fade-up" data-aos-delay="400">
+                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition duration-300">
 
                 <h3 class="text-2xl font-bold mb-3">Python Programming Certification</h3>
                 <p class="text-gray-600">
@@ -657,8 +640,7 @@
             </div>
 
             <div
-                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 card-hover-effect"
-                data-aos="fade-up" data-aos-delay="500">
+                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition duration-300">
 
                 <h3 class="text-2xl font-bold mb-3">First Prize – CSD Forum Event “CSSense”</h3>
                 <p class="text-gray-600">
@@ -666,19 +648,18 @@
         Society for Technical Education (ISTE) Student Chapter of Government Engineering College, Kozhikode,
         representing Government Engineering College, Palakkad.
                 </p>
-            </div>
-        </div>
+</div>
+
     </section>
 
-    <section id="involvement" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-extrabold text-center mb-4" data-aos="fade-down">Leadership & Volunteering</h2>
-        <p class="text-center text-lg text-gray-500 mb-12" data-aos="fade-down" data-aos-delay="100">Empowering teams and communities through collaboration and
+<section id="involvement" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-extrabold text-center mb-4">Leadership & Volunteering</h2>
+        <p class="text-center text-lg text-gray-500 mb-12">Empowering teams and communities through collaboration and
             purpose.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div
-                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 card-hover-effect"
-                data-aos="fade-up" data-aos-delay="200">
+                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition duration-300">
                 <i data-lucide="users" class="w-10 h-10 text-amber-500 mb-4"></i>
                 <h3 class="text-2xl font-bold mb-3">ISTE Department Head</h3>
                 <p class="text-gray-600">
@@ -687,8 +668,7 @@
                 </p>
             </div>
             <div
-                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 card-hover-effect"
-                data-aos="fade-up" data-aos-delay="300">
+                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition duration-300">
                 <i data-lucide="graduation-cap" class="w-10 h-10 text-amber-500 mb-4"></i>
                 <h3 class="text-2xl font-bold mb-3">Mentor – C Tsunami</h3>
                 <p class="text-gray-600">
@@ -698,8 +678,7 @@
             </div>
 
             <div
-                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 card-hover-effect"
-                data-aos="fade-up" data-aos-delay="400">
+                class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition duration-300">
                 <i data-lucide="heart" class="w-10 h-10 text-amber-500 mb-4"></i>
                 <h3 class="text-2xl font-bold mb-3">NSS Volunteer</h3>
                 <p class="text-gray-600">
@@ -710,13 +689,37 @@
         </div>
     </section>
 
-    <section id="contact" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto bg-amber-400 rounded-xl shadow-2xl mb-10"
-             data-aos="zoom-in" data-aos-duration="1000">
+    <section id="contact" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto bg-amber-400 rounded-xl shadow-2xl mb-10">
         <h2 class="text-4xl font-extrabold text-white text-center mb-4">Let’s Collaborate!</h2>
         <p class="text-center text-lg text-gray-800 mb-12 max-w-2xl mx-auto">
             Have an exciting project or opportunity in mind? I’d love to hear about it! Drop me a mail or
             connect with me through my professional profiles.
         </p>
+
+        <!-- <form class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-xl space-y-6">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                <input type="text" id="name" name="name"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500"
+                    placeholder="Your Name">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                <input type="email" id="email" name="email"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500"
+                    placeholder="your@email.com">
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                <textarea id="message" name="message" rows="4"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500"
+                    placeholder="Tell me about your opportunity..."></textarea>
+            </div>
+            <button type="submit"
+                class="w-full py-3 bg-gray-800 text-white font-bold rounded-lg hover:bg-gray-700 transition duration-300 shadow-lg transform hover:scale-[1.01]">
+                Send Message
+            </button>
+        </form> -->
 
         <div class="flex flex-wrap justify-center gap-y-4 gap-x-8 mt-10">
             <a href="mailto:hello@darsana.com"
@@ -738,20 +741,7 @@
         &copy; 2025 Darsana R. All rights reserved. Built with passion and code.
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-        // Initialize AOS here
-        AOS.init({
-            // Global settings:
-            offset: 120, // offset (in px) from the original trigger point
-            delay: 0, // values from 0 to 3000, with step 50ms
-            duration: 800, // values from 0 to 3000, with step 50ms
-            easing: 'ease-in-out', // default easing for AOS animations
-            once: true, // whether animation should happen only once - true/false
-            mirror: false, // whether elements should animate out while scrolling past them
-            anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-        });
-
         lucide.createIcons();
 
         const menuButton = document.getElementById('menu-button');
@@ -787,3 +777,16 @@
 
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
