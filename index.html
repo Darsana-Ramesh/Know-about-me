@@ -11,14 +11,16 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         html {
-            scroll-behavior: smooth;
-        }
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #F8F8F8;
-            overflow-x: hidden;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8F8F8;
+    overflow-x: hidden;
+    margin: 0 !important;   /* Fixes the white border around the page */
+    padding: 0 !important;  /* Fixes the white border around the page */
+}
 
         /* Updated curve-desktop for a stylish, modern look */
         .curve-desktop {
@@ -393,699 +395,735 @@
         </div>
     </section>
     <section id="experience" class="py-16 px-4 lg:px-16 max-w-4xl mx-auto">
-    <div class="text-center mb-16">
-        <h2 class="text-4xl font-black text-gray-900 tracking-tighter">
-            Professional <span class="text-amber-500">Experience</span>
-        </h2>
-        <div class="w-12 h-1 bg-amber-500 mx-auto mt-4 mb-4"></div>
-        <p class="text-gray-400 text-[10px] font-black uppercase tracking-[0.4em]">Industry exposure through applied data-driven problem solving</p>
-    </div>
-
-    <div class="group relative">
-        <div class="relative bg-white border border-gray-100 rounded-[32px] p-8 lg:p-12 shadow-sm hover:shadow-xl hover:border-amber-100 transition-all duration-500">
-            
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
-                <div class="flex items-center gap-5">
-                    <div class="w-14 h-14 bg-gray-900 rounded-2xl flex items-center justify-center text-white">
-                        <i data-lucide="terminal" class="w-7 h-7"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl lg:text-3xl font-black text-gray-900 tracking-tight">Infosys Springboard</h3>
-<p class="text-amber-600 text-sm font-bold uppercase tracking-[0.2em]">Python Intern</p>                    </div>
-                </div>
-                
-                <div class="flex items-center gap-3 text-base lg:text-sm text-gray-700 tracking-tight bg-gray-50 px-5 py-2 rounded-xl border border-gray-100">
-    <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
-    
-    <span>Oct 2025 – Dec 2025</span>
-</div>
-            </div>
-
-            <div class="space-y-6">
-                <div class="border-l-2 border-amber-500 pl-6">
-                    <h4 class="text-xl font-bold text-gray-800 tracking-tight">
-                        Smart Traffic Violation Pattern Detector
-                    </h4>
-                </div>
-
-                <p class="text-gray-500 leading-relaxed text-justify font-light text-lg lg:text-xl">
-                    Explored Indian traffic datasets to uncover high-risk zones and patterns in driver behavior. 
-                    Built interactive Streamlit dashboards to visualize trends, leveraging Matplotlib and Seaborn 
-                    for correlation heatmaps. Delivered actionable insights to the evaluation panel regarding 
-                    urban traffic safety patterns.
-                </p>
-
-                <div class="pt-8 flex flex-wrap gap-4 border-t border-gray-50">
-                    <span class="flex items-center gap-2 text-sm lg:text-base text-gray-700 font-medium tracking-wide group-hover:text-amber-600 transition-colors">
-                        <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Python
-                    </span>
-                    <span class="flex items-center gap-2 text-sm lg:text-base text-gray-700 font-medium tracking-wide group-hover:text-amber-600 transition-colors">
-                        <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Streamlit
-                    </span>
-                    <span class="flex items-center gap-2 text-sm lg:text-base text-gray-700 font-medium tracking-wide group-hover:text-amber-600 transition-colors">
-                        <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Pandas
-                    </span>
-                    <span class="flex items-center gap-2 text-sm lg:text-base text-gray-700 font-medium tracking-wide group-hover:text-amber-600 transition-colors">
-                        <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> NumPy
-                    </span>
-                    <span class="flex items-center gap-2 text-sm lg:text-base text-gray-700 font-medium tracking-wide group-hover:text-amber-600 transition-colors">
-                        <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Matplotlib
-                    </span>
-                    <span class="flex items-center gap-2 text-sm lg:text-base text-gray-700 font-medium tracking-wide group-hover:text-amber-600 transition-colors">
-                        <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Seaborn
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<style>
-    /* Smooth Magnetic Button */
-    .btn-premium {
-        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        position: relative;
-    }
-    .btn-premium:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 15px 30px -10px rgba(245, 158, 11, 0.4);
-        background-color: #f59e0b;
-    }
-
-    /* Highly Readable Tech Tags */
-    .tech-pill {
-        background-color: #fffbeb; /* Amber 50 */
-        color: #92400e; /* Amber 800 */
-        border: 1px solid #fde68a; /* Amber 200 */
-        padding: 4px 12px;
-        border-radius: 8px;
-        font-size: 11px;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
-    }
-
-    /* Card Shadow & Border */
-    .project-card-lg {
-        border: 1px solid rgba(0,0,0,0.03);
-        transition: all 0.5s ease;
-    }
-    .project-card-lg:hover {
-        border-color: rgba(245, 158, 11, 0.3);
-        box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.08);
-    }
-</style>
-
-<section id="projects" class="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
-    <div class="text-center mb-20">
-        <h2 class="text-4xl lg:text-5xl font-black text-gray-900 tracking-tighter">
-            My <span class="text-amber-500">Projects</span>
-        </h2>
-        <div class="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full"></div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12" id="projects-grid">
-
-        <div class="project-card-lg bg-white rounded-[40px] overflow-hidden flex flex-col group">
-            <div class="relative h-64 overflow-hidden">
-                <img src="images/p-resume.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                
-            </div>
-            <div class="p-10 flex-grow flex flex-col">
-                <div class="flex justify-between items-start mb-1">
-                    <h3 class="text-2xl font-black text-gray-900 leading-tight">ResumeLens</h3>
-                    <a href="https://github.com/Darsana-Ramesh/ResumeLens-ai-powered-resume-analyzer" target="_blank" class="p-2 bg-gray-50 rounded-xl hover:bg-amber-100 transition-colors">
-                        <i data-lucide="github" class="w-5 h-5 text-gray-900"></i>
-                    </a>
-                </div>
-                <p class="text-sm font-bold text-amber-600 mb-4 tracking-wide uppercase">AI Talent Scout</p>
-                <p class="text-gray-500 text-sm leading-relaxed mb-8 text-justify">
-                    An intelligent recruitment tool that leverages Generative AI to parse complex resumes and rank candidates based on job description alignment.
-                </p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span class="tech-pill">Python</span>
-                    <span class="tech-pill">Gemini API</span>
-                    <span class="tech-pill">Spacy</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card-lg bg-white rounded-[40px] overflow-hidden flex flex-col group">
-            <div class="relative h-64 overflow-hidden">
-                <img src="images/p-corbeat.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                
-            </div>
-            <div class="p-10 flex-grow flex flex-col">
-                <div class="flex justify-between items-start mb-1">
-                    <h3 class="text-2xl font-black text-gray-900 leading-tight">CorBeat</h3>
-                    <a href="https://github.com/Darsana-Ramesh/HeartDiseasePrediction-ML" target="_blank" class="p-2 bg-gray-50 rounded-xl hover:bg-amber-100 transition-colors">
-                        <i data-lucide="github" class="w-5 h-5 text-gray-900"></i>
-                    </a>
-                </div>
-                <p class="text-sm font-bold text-amber-600 mb-4 tracking-wide uppercase">Heart Disease Predictor</p>
-                <p class="text-gray-500 text-sm leading-relaxed mb-8 text-justify">
-                    Healthcare ML model using Random Forest to analyze clinical parameters with 94.5% accuracy via a Flask API for real-time inference.
-                </p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span class="tech-pill">Scikit-Learn</span>
-                    <span class="tech-pill">Flask</span>
-                    <span class="tech-pill">Pandas</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card-lg bg-white rounded-[40px] overflow-hidden flex flex-col group">
-            <div class="relative h-64 overflow-hidden">
-                <img src="images/p-flow.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                
-            </div>
-            <div class="p-10 flex-grow flex flex-col">
-                <div class="flex justify-between items-start mb-1">
-                    <h3 class="text-2xl font-black text-gray-900 leading-tight">LogicLens</h3>
-                    <a href="https://github.com/Darsana-Ramesh/Logic_solver_ai" target="_blank" class="p-2 bg-gray-50 rounded-xl hover:bg-amber-100 transition-colors">
-                        <i data-lucide="github" class="w-5 h-5 text-gray-900"></i>
-                    </a>
-                </div>
-                <p class="text-sm font-bold text-amber-600 mb-4 tracking-wide uppercase">AI Algorithm Gen</p>
-                <p class="text-gray-500 text-sm leading-relaxed mb-8 text-justify">
-                    Converts natural language problems into structured logic and Mermaid.js flowcharts using Large Language Models.
-                </p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span class="tech-pill">Gemini API</span>
-                    <span class="tech-pill">Mermaid.js</span>
-                    <span class="tech-pill">Python</span>
-                </div>
-            </div>
-        </div>
-
-        <div id="extra-projects" class="hidden contents opacity-0 transition-opacity duration-1000">
-            <div class="project-card-lg bg-white rounded-[40px] overflow-hidden flex flex-col group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="images/p-canteen.jpeg" class="w-full h-full object-cover group-hover:scale-105">
-                    
-                </div>
-                <div class="p-10 flex flex-col flex-grow">
-                    <div class="flex justify-between items-start mb-1">
-                        <h3 class="text-2xl font-black text-gray-900 leading-tight">CanteenExpress</h3>
-                        <a href="https://github.com/Darsana-Ramesh/CanteenExpress" target="_blank" class="p-2 bg-gray-50 rounded-xl hover:bg-amber-100 transition-colors">
-                            <i data-lucide="github" class="w-5 h-5 text-gray-900"></i>
-                        </a>
-                    </div>
-                    <p class="text-sm font-bold text-amber-600 mb-4 uppercase tracking-wide">CMS Ecosystem</p>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-8">Robust digital ecosystem for food management with 3NF-normalized databases and real-time ordering.</p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="tech-pill">PHP</span>
-                        <span class="tech-pill">MySQL</span>
-                        <span class="tech-pill">Bootstrap</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card-lg bg-white rounded-[40px] overflow-hidden flex flex-col group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="images/p_5.png" class="w-full h-full object-cover group-hover:scale-105">
-                                 </div>
-                <div class="p-10 flex flex-col flex-grow">
-                    <div class="flex justify-between items-start mb-1">
-                        <h3 class="text-2xl font-black text-gray-900 leading-tight">FatePredictor</h3>
-                        <a href="https://github.com/Darsana-Ramesh/Predict-your-fate" target="_blank" class="p-2 bg-gray-50 rounded-xl hover:bg-amber-100 transition-colors">
-                            <i data-lucide="github" class="w-5 h-5 text-gray-900"></i>
-                        </a>
-                    </div>
-                    <p class="text-sm font-bold text-amber-600 mb-4 uppercase tracking-wide">Interactive App</p>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-8">Dynamic web application generating humorous "fates" using randomized logic and smooth transitions.</p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="tech-pill">JS (ES6+)</span>
-                        <span class="tech-pill">Animate.css</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card-lg bg-white rounded-[40px] overflow-hidden flex flex-col group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="images/p_6.png" class="w-full h-full object-cover group-hover:scale-105">
-                                  </div>
-                <div class="p-10 flex flex-col flex-grow">
-                    <div class="flex justify-between items-start mb-1">
-                        <h3 class="text-2xl font-black text-gray-900 leading-tight">Portfolio v1</h3>
-                        <a href="https://github.com/Darsana-Ramesh/Practice-portfolio" target="_blank" class="p-2 bg-gray-50 rounded-xl hover:bg-amber-100 transition-colors">
-                            <i data-lucide="github" class="w-5 h-5 text-gray-900"></i>
-                        </a>
-                    </div>
-                    <p class="text-sm font-bold text-amber-600 mb-4 uppercase tracking-wide">Personal Showcase</p>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-8">Personal branding platform focused on clean aesthetics and optimized asset loading.</p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="tech-pill">HTML</span>
-                        <span class="tech-pill">CSS</span>
-                        <span class="tech-pill">Lucide</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="text-center mt-20">
-    <button id="show-more-btn" class="btn-premium px-12 py-5 bg-gray-900 text-white rounded-[24px]">
-        <span class="text-[11px] font-black uppercase tracking-[0.4em] flex items-center justify-center gap-3">
-            Load More <i data-lucide="plus" class="w-4 h-4 transition-transform group-hover:rotate-90"></i>
-        </span>
-    </button>
-
-    <a id="github-redirect-btn" href="https://github.com/Darsana-Ramesh" target="_blank" 
-       class="hidden btn-premium inline-flex px-12 py-5 bg-amber-500 text-white rounded-[24px] opacity-0 transition-all duration-700 shadow-lg shadow-amber-500/20">
-        <span class="text-[11px] font-black uppercase tracking-[0.4em] flex items-center justify-center gap-3">
-            See more on GitHub <i data-lucide="external-link" class="w-4 h-4"></i>
-        </span>
-    </a>
-</div>
-
-<script>
-    document.getElementById('show-more-btn').addEventListener('click', function() {
-        const extraProjects = document.getElementById('extra-projects');
-        const githubBtn = document.getElementById('github-redirect-btn');
-        const loadMoreBtn = this;
-
-        // 1. Reveal the hidden projects
-        extraProjects.classList.remove('hidden');
-        
-        // 2. Trigger smooth fade-in for projects
-        setTimeout(() => {
-            extraProjects.classList.add('opacity-100');
-            extraProjects.classList.remove('opacity-0');
-        }, 10);
-
-        // 3. Hide the current button and show the GitHub button
-        loadMoreBtn.classList.add('hidden');
-        githubBtn.classList.remove('hidden');
-        
-        // 4. Trigger smooth fade-in for the new GitHub button
-        setTimeout(() => {
-            githubBtn.classList.add('opacity-100');
-            githubBtn.classList.remove('opacity-0');
-        }, 50);
-
-        // Refresh icons if using Lucide
-        if(window.lucide) lucide.createIcons();
-    });
-</script>
-
-    <section id="skills" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-extrabold text-center mb-4">Tech Stack & Skills</h2>
-        <p class="text-center text-lg text-gray-500 mb-12">
-            Tools, languages, and frameworks I use to bring ideas to life
-        </p>
-
-        <div class="flex flex-wrap justify-center gap-4 md:gap-6">
-            <!-- Programming Languages -->
-            <div
-                class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>Python</span>
-            </div>
-            <div
-                class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>Java</span>
-            </div>
-            <div
-                class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>C</span>
-            </div>
-            <div
-                class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>R Programming</span>
-            </div>
-
-            <!-- Web Development -->
-            <div
-                class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>HTML5</span>
-            </div>
-            <div
-                class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>CSS3</span>
-            </div>
-            <div
-                class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>JavaScript</span>
-            </div>
-            <div
-                class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>Bootstrap</span>
-            </div>
-            <div
-                class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>Flask</span>
-            </div>
-            <div
-                class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>PHP</span>
-            </div>
-
-            <!-- Data Science & ML -->
-            <div
-                class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>Scikit-learn</span>
-            </div>
-            <div
-                class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>Pandas</span>
-            </div>
-            <div
-                class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>NumPy</span>
-            </div>
-            <div
-                class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>Matplotlib</span>
-            </div>
-
-            <!-- Databases -->
-            <div
-                class="flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>MySQL</span>
-            </div>
-
-            <!-- Tools & Platforms -->
-            <div
-                class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>Git</span>
-            </div>
-            <div
-                class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>GitHub</span>
-            </div>
-            <div
-                class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>VS Code</span>
-            </div>
-            <div
-                class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>Google Colab</span>
-            </div>
-            <div
-                class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
-                <span>Figma</span>
-            </div>
-    </section>
-
-    <section id="education" class="py-24 px-4 lg:px-16 max-w-7xl mx-auto">
-    <div class="flex flex-col lg:flex-row gap-12 items-start">
-
-        <div class="lg:w-1/3 lg:sticky lg:top-24">
-            <h2 class="text-4xl md:text-5xl font-black text-gray-900 leading-tight tracking-tighter">
-                Academic <span class="text-amber-500">Journey</span>
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black text-gray-900 tracking-tighter">
+                Professional <span class="text-amber-500">Experience</span>
             </h2>
-            <div class="w-16 h-2 bg-amber-500 mt-4 mb-6 rounded-full"></div>
-            
-            <p class="hidden lg:block text-gray-500 text-lg leading-relaxed max-w-sm">
-                Building a rigorous theoretical foundation and practical expertise in modern computing.
-            </p>
+            <div class="w-12 h-1 bg-amber-500 mx-auto mt-4 mb-4"></div>
+            <p class="text-gray-400 text-[10px] font-black uppercase tracking-[0.4em]">Industry exposure through applied
+                data-driven problem solving</p>
         </div>
 
-        <div class="lg:w-2/3 space-y-16">
-            
-            <div class="relative pl-10 border-l-4 border-gray-200 group">
-                <div class="absolute -left-[14px] top-1.5 w-6 h-6 bg-white border-4 border-amber-500 rounded-full group-hover:bg-amber-500 transition-all duration-300"></div>
-                
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-                    <div>
-                        <h3 class="text-2xl font-black text-gray-900 tracking-tight leading-tight group-hover:text-amber-600 transition-colors">
-                            B.Tech in Information Technology
-                        </h3>
-                        <p class="text-lg font-normal text-gray-500 mt-1">Government Engineering College Palakkad</p>
-                        
-                        <div class="mt-4 flex items-center gap-2">
-                            <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">CGPA —</span>
-                            <span class="text-lg font-black text-gray-900">9.52</span>
+        <div class="group relative">
+            <div
+                class="relative bg-white border border-gray-100 rounded-[32px] p-8 lg:p-12 shadow-sm hover:shadow-xl hover:border-amber-100 transition-all duration-500">
+
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+                    <div class="flex items-center gap-5">
+                        <div class="w-14 h-14 bg-gray-900 rounded-2xl flex items-center justify-center text-white">
+                            <i data-lucide="terminal" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl lg:text-3xl font-black text-gray-900 tracking-tight">Infosys Springboard
+                            </h3>
+                            <p class="text-amber-600 text-sm font-bold uppercase tracking-[0.2em]">Python Intern</p>
                         </div>
                     </div>
-                    <span class="text-[11px] font-black text-amber-600 bg-amber-50 px-4 py-1.5 rounded-full uppercase tracking-widest whitespace-nowrap self-start">
-                        2022 — 2026
-                    </span>
-                </div>
-            </div>
 
-            <div class="relative pl-10 border-l-4 border-gray-200 group">
-                <div class="absolute -left-[14px] top-1.5 w-6 h-6 bg-white border-4 border-gray-300 rounded-full group-hover:border-amber-500 transition-all duration-300"></div>
-                
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-                    <div>
-                        <h3 class="text-2xl font-black text-gray-900 tracking-tight leading-tight">
-                            Higher Secondary Education
-                        </h3>
-                        <p class="text-lg font-normal text-gray-500 mt-1">GHSS Pattambi</p>
-                        
-                        <div class="mt-4 flex items-center gap-2">
-                            <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Final Result —</span>
-                            <span class="text-lg font-black text-gray-900">99.33%</span>
-                        </div>
-                    </div>
-                    <span class="text-[11px] font-black text-amber-600 bg-amber-50 px-4 py-1.5 rounded-full uppercase tracking-widest whitespace-nowrap self-start">
-                        2020 — 2022
-                    </span>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-    <section id="achievements" class="py-24 px-4 lg:px-16 max-w-7xl mx-auto">
-    <div class="text-center mb-16 md:mb-20">
-        <h2 class="text-4xl lg:text-5xl font-black text-gray-900 tracking-tighter">
-            Key <span class="text-amber-500">Recognition</span>
-        </h2>
-        <div class="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full"></div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12 max-w-6xl mx-auto">
-
-        <div class="group flex items-start gap-6 transition-all duration-300">
-            <div class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
-                <i data-lucide="trophy" class="w-5 h-5"></i>
-            </div>
-            <div class="w-full">
-                <h3 class="text-xl font-black text-gray-900 leading-tight">
-                    Top 6 Finalist – SciSol
-                </h3>
-                <p class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] border border-amber-200">
-                    38th Kerala Science Congress
-                </p>
-                <p class="text-gray-500 text-sm leading-relaxed text-justify">
-                    Selected from 73 competitive entries for an oral presentation, delivering a science-driven solution addressing real-world community challenges through technical innovation.
-                </p>
-            </div>
-        </div>
-
-        <div class="group flex items-start gap-6 transition-all duration-300">
-            <div class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
-                <i data-lucide="award" class="w-5 h-5"></i>
-            </div>
-            <div class="w-full">
-                <h3 class="text-xl font-black text-gray-900 leading-tight">
-                    Database Management Systems
-                </h3>
-                <p class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] border border-amber-200">
-                    IIT Kharagpur (NPTEL)
-                </p>
-                <p class="text-gray-500 text-sm leading-relaxed text-justify">
-                    Achieved national ranking among 7,000+ learners, demonstrating mastery in SQL, normalization, and database architecture through rigorous academic evaluation.
-                </p>
-            </div>
-        </div>
-
-        <div class="group flex items-start gap-6 transition-all duration-300">
-            <div class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
-                <i data-lucide="medal" class="w-5 h-5"></i>
-            </div>
-            <div class="w-full">
-                <h3 class="text-xl font-black text-gray-900 leading-tight">
-                    CSD Forum "CSSense"
-                </h3>
-                <p class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] border border-amber-200">
-                    ISTE Student Chapter
-                </p>
-                <p class="text-gray-500 text-sm leading-relaxed text-justify">
-                    Secured first place in the technical event representing GEC Palakkad at the Government Engineering College, Kozhikode, showcasing rapid problem-solving skills.
-                </p>
-            </div>
-        </div>
-
-        <div class="group flex items-start gap-6 transition-all duration-300">
-            <div class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
-                <i data-lucide="code-2" class="w-5 h-5"></i>
-            </div>
-            <div class="w-full">
-                <h3 class="text-xl font-black text-gray-900 leading-tight">
-                    Python Programming
-                </h3>
-                <p class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] border border-amber-200">
-                    Infosys Springboard
-                </p>
-                <p class="text-gray-500 text-sm leading-relaxed text-justify">
-                    Validated core proficiency in object-oriented programming and industry-standard development techniques through a comprehensive industry-led certification.
-                </p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-    <section id="services" class="py-24 px-2 lg:px-16 max-w-7xl mx-auto">
-        <div class="flex flex-col lg:flex-row gap-12 items-start">
-
-            <div class="lg:w-1/3 lg:sticky lg:top-24">
-                <h2 class="text-5xl font-extrabold text-gray-900 leading-tight">
-                    What <span class="text-amber-500">I Do</span>
-                </h2>
-                <div class="w-16 h-2 bg-amber-500 mt-4 mb-6"></div>
-                <p class="text-gray-500 text-lg leading-relaxed">
-                    I combine technical expertise with creative problem-solving to build meaningful digital experiences.
-                </p>
-            </div>
-
-            <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                <div
-                    class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
                     <div
-                        class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                        <i data-lucide="code-2" class="w-7 h-7"></i>
+                        class="flex items-center gap-3 text-base lg:text-sm text-gray-700 tracking-tight bg-gray-50 px-5 py-2 rounded-xl border border-gray-100">
+                        <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+
+                        <span>Oct 2025 – Dec 2025</span>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Web Development</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">
-                        I build modern, high-performance websites that look great and work flawlessly on any device. I
-                        focus on creating fast, reliable, and scalable digital solutions.
-                    </p>
                 </div>
 
-                <div
-                    class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
-                    <div
-                        class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                        <i data-lucide="framer" class="w-7 h-7"></i>
+                <div class="space-y-6">
+                    <div class="border-l-2 border-amber-500 pl-6">
+                        <h4 class="text-xl font-bold text-gray-800 tracking-tight">
+                            Smart Traffic Violation Pattern Detector
+                        </h4>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">UI/UX Design</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">
-                        I design user-friendly interfaces that are intuitive and visually stunning. My goal is to create
-                        smooth digital experiences that make interacting with technology simple.
-                    </p>
-                </div>
 
-                <div
-                    class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
-                    <div
-                        class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                        <i data-lucide="bar-chart-big" class="w-7 h-7"></i>
+                    <p class="text-gray-500 leading-relaxed text-justify font-light text-lg lg:text-xl">
+                        Explored Indian traffic datasets to uncover high-risk zones and patterns in driver behavior.
+                        Built interactive Streamlit dashboards to visualize trends, leveraging Matplotlib and Seaborn
+                        for correlation heatmaps. Delivered actionable insights to the evaluation panel regarding
+                        urban traffic safety patterns.
+                    </p>
+
+                    <div class="pt-8 flex flex-wrap gap-4 border-t border-gray-50">
+                        <span
+                            class="flex items-center gap-2 text-sm lg:text-base text-gray-700 font-medium tracking-wide group-hover:text-amber-600 transition-colors">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Python
+                        </span>
+                        <span
+                            class="flex items-center gap-2 text-sm lg:text-base text-gray-700 font-medium tracking-wide group-hover:text-amber-600 transition-colors">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Streamlit
+                        </span>
+                        <span
+                            class="flex items-center gap-2 text-sm lg:text-base text-gray-700 font-medium tracking-wide group-hover:text-amber-600 transition-colors">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Pandas
+                        </span>
+                        <span
+                            class="flex items-center gap-2 text-sm lg:text-base text-gray-700 font-medium tracking-wide group-hover:text-amber-600 transition-colors">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> NumPy
+                        </span>
+                        <span
+                            class="flex items-center gap-2 text-sm lg:text-base text-gray-700 font-medium tracking-wide group-hover:text-amber-600 transition-colors">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Matplotlib
+                        </span>
+                        <span
+                            class="flex items-center gap-2 text-sm lg:text-base text-gray-700 font-medium tracking-wide group-hover:text-amber-600 transition-colors">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Seaborn
+                        </span>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Data Science & AI</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">
-                        I turn complex data into clear insights and build intelligent systems that solve real-world
-                        problems. I use analytics to help make smarter, data-driven decisions.
-                    </p>
                 </div>
-
-                <div
-                    class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
-                    <div
-                        class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                        <i data-lucide="users" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Technical Mentoring</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">
-                        I guide aspiring developers through the world of code and logic. By breaking down difficult
-                        concepts, I help others grow their skills and build a strong foundation.
-                    </p>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 px-2 lg:px-16 max-w-7xl mx-auto bg-amber-400 rounded-xl shadow-2xl mb-10">
-        <h2 class="text-4xl font-extrabold text-white text-center mb-4">Let’s Collaborate!</h2>
-        <p class="text-center text-lg text-gray-800 mb-12 max-w-2xl mx-auto">
-            Have an exciting project or opportunity in mind? I’d love to hear about it! Drop me a mail or
-            connect with me through my professional profiles.
-        </p>
 
-        <!-- <form class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-xl space-y-6">
-            <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-                <input type="text" id="name" name="name"
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500"
-                    placeholder="Your Name">
-            </div>
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
-                <input type="email" id="email" name="email"
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500"
-                    placeholder="your@email.com">
-            </div>
-            <div>
-                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
-                <textarea id="message" name="message" rows="4"
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500"
-                    placeholder="Tell me about your opportunity..."></textarea>
-            </div>
-            <button type="submit"
-                class="w-full py-3 bg-gray-800 text-white font-bold rounded-lg hover:bg-gray-700 transition duration-300 shadow-lg transform hover:scale-[1.01]">
-                Send Message
-            </button>
-        </form> -->
-
-        <div class="flex flex-wrap justify-center gap-y-4 gap-x-8 mt-10">
-            <a href="mailto:hello@darsana.com"
-                class="text-gray-800 hover:text-white transition duration-300 flex items-center font-medium">
-                <i data-lucide="mail" class="w-6 h-6 mr-2"></i> darsanadr04@gmail.com
-            </a>
-            <a href="https://linkedin.com/in/darsanar" target="_blank"
-                class="text-gray-800 hover:text-white transition duration-300 flex items-center font-medium">
-                <i data-lucide="linkedin" class="w-6 h-6 mr-2"></i> LinkedIn
-            </a>
-            <a href="https://github.com/Darsana-Ramesh" target="_blank"
-                class="text-gray-800 hover:text-white transition duration-300 flex items-center font-medium">
-                <i data-lucide="github" class="w-6 h-6 mr-2"></i> GitHub
-            </a>
-        </div>
-    </section>
-
-    <footer class="text-center py-6 text-sm text-gray-500 bg-white shadow-inner">
-        &copy; 2025 Darsana R. All rights reserved. Built with passion and code.
-    </footer>
-
-    <script>
-        lucide.createIcons();
-
-        const menuButton = document.getElementById('menu-button');
-        const closeButton = document.getElementById('close-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuLinks = document.querySelectorAll('.menu-link');
-        const desktopLinks = document.querySelectorAll('.desktop-link');
-
-        function toggleMenu() {
-            mobileMenu.classList.toggle('is-open');
-            const isOpen = mobileMenu.classList.contains('is-open');
-            // Prevent scrolling when the menu is open
-            document.body.classList.toggle('overflow-hidden', isOpen);
+    <style>
+        /* Smooth Magnetic Button */
+        .btn-premium {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
         }
 
-        menuButton.addEventListener('click', toggleMenu);
-        closeButton.addEventListener('click', toggleMenu);
+        .btn-premium:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -10px rgba(245, 158, 11, 0.4);
+            background-color: #f59e0b;
+        }
 
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Close the menu after a link is clicked
-                setTimeout(toggleMenu, 100);
+        /* Highly Readable Tech Tags */
+        .tech-pill {
+            background-color: #fffbeb;
+            /* Amber 50 */
+            color: #92400e;
+            /* Amber 800 */
+            border: 1px solid #fde68a;
+            /* Amber 200 */
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        /* Card Shadow & Border */
+        .project-card-lg {
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: all 0.5s ease;
+        }
+
+        .project-card-lg:hover {
+            border-color: rgba(245, 158, 11, 0.3);
+            box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+
+    <section id="projects" class="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl lg:text-5xl font-black text-gray-900 tracking-tighter">
+                My <span class="text-amber-500">Projects</span>
+            </h2>
+            <div class="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12" id="projects-grid">
+
+            <div class="project-card-lg bg-white rounded-[40px] overflow-hidden flex flex-col group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="images/p-resume.png"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+
+                </div>
+                <div class="p-10 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-2xl font-black text-gray-900 leading-tight">ResumeLens</h3>
+                        <a href="https://github.com/Darsana-Ramesh/ResumeLens-ai-powered-resume-analyzer"
+                            target="_blank" class="p-2 bg-gray-50 rounded-xl hover:bg-amber-100 transition-colors">
+                            <i data-lucide="github" class="w-5 h-5 text-gray-900"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm font-bold text-amber-600 mb-4 tracking-wide uppercase">AI Talent Scout</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 text-justify">
+                        An intelligent recruitment tool that leverages Generative AI to parse complex resumes and rank
+                        candidates based on job description alignment.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Gemini API</span>
+                        <span class="tech-pill">Spacy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-lg bg-white rounded-[40px] overflow-hidden flex flex-col group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="images/p-corbeat.png"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+
+                </div>
+                <div class="p-10 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-2xl font-black text-gray-900 leading-tight">CorBeat</h3>
+                        <a href="https://github.com/Darsana-Ramesh/HeartDiseasePrediction-ML" target="_blank"
+                            class="p-2 bg-gray-50 rounded-xl hover:bg-amber-100 transition-colors">
+                            <i data-lucide="github" class="w-5 h-5 text-gray-900"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm font-bold text-amber-600 mb-4 tracking-wide uppercase">Heart Disease Predictor</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 text-justify">
+                        Healthcare ML model using Random Forest to analyze clinical parameters with 94.5% accuracy via a
+                        Flask API for real-time inference.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="tech-pill">Scikit-Learn</span>
+                        <span class="tech-pill">Flask</span>
+                        <span class="tech-pill">Pandas</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-lg bg-white rounded-[40px] overflow-hidden flex flex-col group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="images/p-flow.png"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+
+                </div>
+                <div class="p-10 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-2xl font-black text-gray-900 leading-tight">LogicLens</h3>
+                        <a href="https://github.com/Darsana-Ramesh/Logic_solver_ai" target="_blank"
+                            class="p-2 bg-gray-50 rounded-xl hover:bg-amber-100 transition-colors">
+                            <i data-lucide="github" class="w-5 h-5 text-gray-900"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm font-bold text-amber-600 mb-4 tracking-wide uppercase">AI Algorithm Gen</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 text-justify">
+                        Converts natural language problems into structured logic and Mermaid.js flowcharts using Large
+                        Language Models.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="tech-pill">Gemini API</span>
+                        <span class="tech-pill">Mermaid.js</span>
+                        <span class="tech-pill">Python</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="extra-projects" class="hidden contents opacity-0 transition-opacity duration-1000">
+                <div class="project-card-lg bg-white rounded-[40px] overflow-hidden flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/p-canteen.jpeg" class="w-full h-full object-cover group-hover:scale-105">
+
+                    </div>
+                    <div class="p-10 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">CanteenExpress</h3>
+                            <a href="https://github.com/Darsana-Ramesh/CanteenExpress" target="_blank"
+                                class="p-2 bg-gray-50 rounded-xl hover:bg-amber-100 transition-colors">
+                                <i data-lucide="github" class="w-5 h-5 text-gray-900"></i>
+                            </a>
+                        </div>
+                        <p class="text-sm font-bold text-amber-600 mb-4 uppercase tracking-wide">CMS Ecosystem</p>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-8">Robust digital ecosystem for food
+                            management with 3NF-normalized databases and real-time ordering.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="tech-pill">PHP</span>
+                            <span class="tech-pill">MySQL</span>
+                            <span class="tech-pill">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-lg bg-white rounded-[40px] overflow-hidden flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/p_5.png" class="w-full h-full object-cover group-hover:scale-105">
+                    </div>
+                    <div class="p-10 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">FatePredictor</h3>
+                            <a href="https://github.com/Darsana-Ramesh/Predict-your-fate" target="_blank"
+                                class="p-2 bg-gray-50 rounded-xl hover:bg-amber-100 transition-colors">
+                                <i data-lucide="github" class="w-5 h-5 text-gray-900"></i>
+                            </a>
+                        </div>
+                        <p class="text-sm font-bold text-amber-600 mb-4 uppercase tracking-wide">Interactive App</p>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-8">Dynamic web application generating
+                            humorous "fates" using randomized logic and smooth transitions.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="tech-pill">JS (ES6+)</span>
+                            <span class="tech-pill">Animate.css</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-lg bg-white rounded-[40px] overflow-hidden flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/p_6.png" class="w-full h-full object-cover group-hover:scale-105">
+                    </div>
+                    <div class="p-10 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">Portfolio v1</h3>
+                            <a href="https://github.com/Darsana-Ramesh/Practice-portfolio" target="_blank"
+                                class="p-2 bg-gray-50 rounded-xl hover:bg-amber-100 transition-colors">
+                                <i data-lucide="github" class="w-5 h-5 text-gray-900"></i>
+                            </a>
+                        </div>
+                        <p class="text-sm font-bold text-amber-600 mb-4 uppercase tracking-wide">Personal Showcase</p>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-8">Personal branding platform focused on
+                            clean aesthetics and optimized asset loading.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="tech-pill">HTML</span>
+                            <span class="tech-pill">CSS</span>
+                            <span class="tech-pill">Lucide</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-20">
+            <button id="show-more-btn" class="btn-premium px-12 py-5 bg-gray-900 text-white rounded-[24px]">
+                <span class="text-[11px] font-black uppercase tracking-[0.4em] flex items-center justify-center gap-3">
+                    Load More <i data-lucide="plus" class="w-4 h-4 transition-transform group-hover:rotate-90"></i>
+                </span>
+            </button>
+
+            <a id="github-redirect-btn" href="https://github.com/Darsana-Ramesh" target="_blank"
+                class="hidden btn-premium inline-flex px-12 py-5 bg-amber-500 text-white rounded-[24px] opacity-0 transition-all duration-700 shadow-lg shadow-amber-500/20">
+                <span class="text-[11px] font-black uppercase tracking-[0.4em] flex items-center justify-center gap-3">
+                    See more on GitHub <i data-lucide="external-link" class="w-4 h-4"></i>
+                </span>
+            </a>
+        </div>
+
+        <script>
+            document.getElementById('show-more-btn').addEventListener('click', function () {
+                const extraProjects = document.getElementById('extra-projects');
+                const githubBtn = document.getElementById('github-redirect-btn');
+                const loadMoreBtn = this;
+
+                // 1. Reveal the hidden projects
+                extraProjects.classList.remove('hidden');
+
+                // 2. Trigger smooth fade-in for projects
+                setTimeout(() => {
+                    extraProjects.classList.add('opacity-100');
+                    extraProjects.classList.remove('opacity-0');
+                }, 10);
+
+                // 3. Hide the current button and show the GitHub button
+                loadMoreBtn.classList.add('hidden');
+                githubBtn.classList.remove('hidden');
+
+                // 4. Trigger smooth fade-in for the new GitHub button
+                setTimeout(() => {
+                    githubBtn.classList.add('opacity-100');
+                    githubBtn.classList.remove('opacity-0');
+                }, 50);
+
+                // Refresh icons if using Lucide
+                if (window.lucide) lucide.createIcons();
             });
-        });
+        </script>
 
-        // Optional: Close menu when clicking desktop links (though not strictly necessary)
-        // desktopLinks.forEach(link => {
-        //     link.addEventListener('click', function(e) {
-        //     });
-        // });
-    </script>
+        <section id="skills" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-center mb-4">Tech Stack & Skills</h2>
+            <p class="text-center text-lg text-gray-500 mb-12">
+                Tools, languages, and frameworks I use to bring ideas to life
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                <!-- Programming Languages -->
+                <div
+                    class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>Python</span>
+                </div>
+                <div
+                    class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>Java</span>
+                </div>
+                <div
+                    class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>C</span>
+                </div>
+                <div
+                    class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>R Programming</span>
+                </div>
+
+                <!-- Web Development -->
+                <div
+                    class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>HTML5</span>
+                </div>
+                <div
+                    class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>CSS3</span>
+                </div>
+                <div
+                    class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>JavaScript</span>
+                </div>
+                <div
+                    class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>Bootstrap</span>
+                </div>
+                <div
+                    class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>Flask</span>
+                </div>
+                <div
+                    class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>PHP</span>
+                </div>
+
+                <!-- Data Science & ML -->
+                <div
+                    class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>Scikit-learn</span>
+                </div>
+                <div
+                    class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>Pandas</span>
+                </div>
+                <div
+                    class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>NumPy</span>
+                </div>
+                <div
+                    class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>Matplotlib</span>
+                </div>
+
+                <!-- Databases -->
+                <div
+                    class="flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>MySQL</span>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div
+                    class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>Git</span>
+                </div>
+                <div
+                    class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>GitHub</span>
+                </div>
+                <div
+                    class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>VS Code</span>
+                </div>
+                <div
+                    class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>Google Colab</span>
+                </div>
+                <div
+                    class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
+                    <span>Figma</span>
+                </div>
+        </section>
+
+        <section id="education" class="py-24 px-4 lg:px-16 max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-12 items-start">
+
+                <div class="lg:w-1/3 lg:sticky lg:top-24">
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 leading-tight tracking-tighter">
+                        Academic <span class="text-amber-500">Journey</span>
+                    </h2>
+                    <div class="w-16 h-2 bg-amber-500 mt-4 mb-6 rounded-full"></div>
+
+                    <p class="hidden lg:block text-gray-500 text-lg leading-relaxed max-w-sm">
+                        Building a rigorous theoretical foundation and practical expertise in modern computing.
+                    </p>
+                </div>
+
+                <div class="lg:w-2/3 space-y-16">
+
+                    <div class="relative pl-10 border-l-4 border-gray-200 group">
+                        <div
+                            class="absolute -left-[14px] top-1.5 w-6 h-6 bg-white border-4 border-amber-500 rounded-full group-hover:bg-amber-500 transition-all duration-300">
+                        </div>
+
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+                            <div>
+                                <h3
+                                    class="text-2xl font-black text-gray-900 tracking-tight leading-tight group-hover:text-amber-600 transition-colors">
+                                    B.Tech in Information Technology
+                                </h3>
+                                <p class="text-lg font-normal text-gray-500 mt-1">Government Engineering College
+                                    Palakkad</p>
+
+                                <div class="mt-4 flex items-center gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">CGPA
+                                        —</span>
+                                    <span class="text-lg font-black text-gray-900">9.52</span>
+                                </div>
+                            </div>
+                            <span
+                                class="text-[11px] font-black text-amber-600 bg-amber-50 px-4 py-1.5 rounded-full uppercase tracking-widest whitespace-nowrap self-start">
+                                2022 — 2026
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-10 border-l-4 border-gray-200 group">
+                        <div
+                            class="absolute -left-[14px] top-1.5 w-6 h-6 bg-white border-4 border-gray-300 rounded-full group-hover:border-amber-500 transition-all duration-300">
+                        </div>
+
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+                            <div>
+                                <h3 class="text-2xl font-black text-gray-900 tracking-tight leading-tight">
+                                    Higher Secondary Education
+                                </h3>
+                                <p class="text-lg font-normal text-gray-500 mt-1">GHSS Pattambi</p>
+
+                                <div class="mt-4 flex items-center gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Final
+                                        Result —</span>
+                                    <span class="text-lg font-black text-gray-900">99.33%</span>
+                                </div>
+                            </div>
+                            <span
+                                class="text-[11px] font-black text-amber-600 bg-amber-50 px-4 py-1.5 rounded-full uppercase tracking-widest whitespace-nowrap self-start">
+                                2020 — 2022
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="py-24 px-4 lg:px-16 max-w-7xl mx-auto">
+            <div class="text-center mb-16 md:mb-20">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 tracking-tighter">
+                    Key <span class="text-amber-500">Recognition</span>
+                </h2>
+                <div class="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12 max-w-6xl mx-auto">
+
+                <div class="group flex items-start gap-6 transition-all duration-300">
+                    <div
+                        class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
+                        <i data-lucide="trophy" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="text-xl font-black text-gray-900 leading-tight">
+                            Top 6 Finalist – SciSol
+                        </h3>
+                        <p
+                            class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] border border-amber-200">
+                            38th Kerala Science Congress
+                        </p>
+                        <p class="text-gray-500 text-sm leading-relaxed text-justify">
+                            Selected from 73 competitive entries for an oral presentation, delivering a science-driven
+                            solution addressing real-world community challenges through technical innovation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group flex items-start gap-6 transition-all duration-300">
+                    <div
+                        class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
+                        <i data-lucide="award" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="text-xl font-black text-gray-900 leading-tight">
+                            Database Management Systems
+                        </h3>
+                        <p
+                            class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] border border-amber-200">
+                            IIT Kharagpur (NPTEL)
+                        </p>
+                        <p class="text-gray-500 text-sm leading-relaxed text-justify">
+                            Achieved national ranking among 7,000+ learners, demonstrating mastery in SQL,
+                            normalization, and database architecture through rigorous academic evaluation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group flex items-start gap-6 transition-all duration-300">
+                    <div
+                        class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
+                        <i data-lucide="medal" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="text-xl font-black text-gray-900 leading-tight">
+                            CSD Forum "CSSense"
+                        </h3>
+                        <p
+                            class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] border border-amber-200">
+                            ISTE Student Chapter
+                        </p>
+                        <p class="text-gray-500 text-sm leading-relaxed text-justify">
+                            Secured first place in the technical event representing GEC Palakkad at the Government
+                            Engineering College, Kozhikode, showcasing rapid problem-solving skills.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group flex items-start gap-6 transition-all duration-300">
+                    <div
+                        class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
+                        <i data-lucide="code-2" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="text-xl font-black text-gray-900 leading-tight">
+                            Python Programming
+                        </h3>
+                        <p
+                            class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] border border-amber-200">
+                            Infosys Springboard
+                        </p>
+                        <p class="text-gray-500 text-sm leading-relaxed text-justify">
+                            Validated core proficiency in object-oriented programming and industry-standard development
+                            techniques through a comprehensive industry-led certification.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="services" class="py-24 px-2 lg:px-16 max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-12 items-start">
+
+                <div class="lg:w-1/3 lg:sticky lg:top-24">
+                    <h2 class="text-5xl font-extrabold text-gray-900 leading-tight">
+                        What <span class="text-amber-500">I Do</span>
+                    </h2>
+                    <div class="w-16 h-2 bg-amber-500 mt-4 mb-6"></div>
+                    <p class="text-gray-500 text-lg leading-relaxed">
+                        I combine technical expertise with creative problem-solving to build meaningful digital
+                        experiences.
+                    </p>
+                </div>
+
+                <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <div
+                        class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
+                        <div
+                            class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="code-2" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Web Development</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            I build modern, high-performance websites that look great and work flawlessly on any device.
+                            I
+                            focus on creating fast, reliable, and scalable digital solutions.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
+                        <div
+                            class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="framer" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">UI/UX Design</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            I design user-friendly interfaces that are intuitive and visually stunning. My goal is to
+                            create
+                            smooth digital experiences that make interacting with technology simple.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
+                        <div
+                            class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="bar-chart-big" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Data Science & AI</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            I turn complex data into clear insights and build intelligent systems that solve real-world
+                            problems. I use analytics to help make smarter, data-driven decisions.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
+                        <div
+                            class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="users" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Technical Mentoring</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            I guide aspiring developers through the world of code and logic. By breaking down difficult
+                            concepts, I help others grow their skills and build a strong foundation.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact" class="w-full bg-[#0f172a] mt-20 pt-16 pb-0">
+    
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+        
+        <h2 class="text-4xl font-black text-white tracking-tighter text-center">
+            Let's <span class="text-amber-400">Collaborate</span>
+        </h2>
+        <div class="w-12 h-1.5 bg-amber-400 mt-3 mb-10 rounded-full"></div>
+
+        <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 mb-12">
+            <a href="mailto:darsanadr04@gmail.com" class="group flex items-center gap-3">
+                <i data-lucide="mail" class="w-5 h-5 text-gray-400 group-hover:text-amber-400 transition-colors"></i>
+                <span class="text-sm font-bold text-gray-300 group-hover:text-white transition-colors">darsanadr04@gmail.com</span>
+            </a>
+            <a href="https://linkedin.com/in/darsanar" target="_blank" class="group flex items-center gap-3">
+                <i data-lucide="linkedin" class="w-5 h-5 text-gray-400 group-hover:text-amber-400 transition-colors"></i>
+                <span class="text-sm font-bold text-gray-300 group-hover:text-white transition-colors">LinkedIn</span>
+            </a>
+            <a href="https://github.com/Darsana-Ramesh" target="_blank" class="group flex items-center gap-3">
+                <i data-lucide="github" class="w-5 h-5 text-gray-400 group-hover:text-amber-400 transition-colors"></i>
+                <span class="text-sm font-bold text-gray-300 group-hover:text-white transition-colors">GitHub</span>
+            </a>
+        </div>
+
+        <div class="w-full text-center pb-8">
+            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.4em] leading-none m-0">
+                &copy; 2026 <span class="text-white">DARSANA R.</span> • BUILT WITH PASSION
+            </p>
+        </div>
+    </div>
+</footer>
+
+        <script>
+            lucide.createIcons();
+
+            const menuButton = document.getElementById('menu-button');
+            const closeButton = document.getElementById('close-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuLinks = document.querySelectorAll('.menu-link');
+            const desktopLinks = document.querySelectorAll('.desktop-link');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('is-open');
+                const isOpen = mobileMenu.classList.contains('is-open');
+                // Prevent scrolling when the menu is open
+                document.body.classList.toggle('overflow-hidden', isOpen);
+            }
+
+            menuButton.addEventListener('click', toggleMenu);
+            closeButton.addEventListener('click', toggleMenu);
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Close the menu after a link is clicked
+                    setTimeout(toggleMenu, 100);
+                });
+            });
+
+            // Optional: Close menu when clicking desktop links (though not strictly necessary)
+            // desktopLinks.forEach(link => {
+            //     link.addEventListener('click', function(e) {
+            //     });
+            // });
+        </script>
 </body>
 
 
