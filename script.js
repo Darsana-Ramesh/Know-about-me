@@ -58,4 +58,3 @@ document.getElementById('show-more-btn').addEventListener('click', function () {
     if (window.lucide) lucide.createIcons();
 });
 
-lucide.createIcons();
