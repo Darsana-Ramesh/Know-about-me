@@ -57,3 +57,5 @@ document.getElementById('show-more-btn').addEventListener('click', function () {
     // Refresh icons if using Lucide
     if (window.lucide) lucide.createIcons();
 });
+
+lucide.createIcons();
