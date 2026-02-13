@@ -9,203 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #F8F8F8;
-    overflow-x: hidden;
-    margin: 0 !important;   /* Fixes the white border around the page */
-    padding: 0 !important;  /* Fixes the white border around the page */
-}
-
-        /* Updated curve-desktop for a stylish, modern look */
-        .curve-desktop {
-            /* This is the large screen style */
-            border-bottom-left-radius: 200px;
-            border-top-left-radius: 50px;
-        }
-
-        @media (max-width: 1023px) {
-
-            /* Applies to tablet (md) and mobile (sm/default) */
-            .curve-desktop {
-                border-radius: 0;
-                border-top-left-radius: 100px;
-                border-top-right-radius: 100px;
-            }
-        }
-
-        /* Adjusted hero-image styles for better fit within a dynamic height container */
-        .hero-image {
-            transform: translateY(0);
-            object-fit: cover;
-            width: 100%;
-            max-width: none;
-            height: 100%;
-            /* Fill container height dynamically */
-            border-radius: 0;
-        }
-
-        /* Removed fixed heights from your custom CSS for lg screens */
-        @media (min-width: 1024px) {
-
-            /* We rely on the flex-1 and the surrounding content's height to define the image container's height */
-            .lg\:-ml-6 {
-                margin-left: -0.5rem;
-            }
-        }
-
-        /* Mobile menu styles remain effective */
-        .mobile-menu-overlay {
-            z-index: 60;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease-out;
-            display: flex;
-        }
-
-        .mobile-menu-overlay.is-open {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .mobile-menu-overlay .menu-content {
-            transform: translateY(-100%);
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            height: 100%;
-            width: 100%;
-        }
-
-        .mobile-menu-overlay.is-open .menu-content {
-            transform: translateY(0);
-        }
-
-        /* Custom Styles for New Sections */
-        .service-boxes {
-            display: grid;
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .service-boxes {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .service-boxes {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-            }
-        }
-
-        .service-box {
-            padding: 1.5rem;
-            background-color: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            border-top: 5px solid #F59E0B;
-            /* Amber-500 equivalent */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            /* Center box content, as requested for new box sections */
-            text-align: center;
-        }
-
-        .service-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-box h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #1F2937;
-            /* Gray-800 equivalent */
-        }
-
-        .service-box p {
-            font-size: 1rem;
-            color: #4B5563;
-            /* Gray-600 equivalent */
-        }
-
-        .article-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            max-width: 6xl;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .article-container article {
-            background-color: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            width: 80px;
-            /* Standard size for an icon box */
-        }
-
-        .article-container article:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-        }
-
-        .tool-icon {
-            width: 100%;
-            height: 50px;
-            /* Fixed height for the image */
-            object-fit: contain;
-            /* Ensure the image fits without cropping and maintains aspect ratio */
-        }
-
-        .section__text__p1 {
-            text-align: center;
-            color: #6B7280;
-            /* Gray-500 */
-            font-size: 1.125rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Custom CSS to justify text in the About section */
-        #about p {
-            text-align: justify;
-            text-justify: inter-word;
-            /* Better justification control for some browsers */
-        }
-
-        /* Center align content in new box sections: projects, involvement, achievements (certifications) */
-        .project-box-content,
-        .involvement-box,
-        .achievement-box {
-            text-align: center;
-        }
-
-        @keyframes scan {
-            0% {
-                top: 0%;
-            }
-
-            100% {
-                top: 100%;
-            }
-        }
-
-        .animate-scan {
-            animation: scan 2.5s linear infinite;
-        }
-    </style>
+    <link href="./style.css" rel="stylesheet">
 </head>
 
 <body class="text-gray-800">
@@ -243,35 +47,64 @@ body {
         </div>
     </header>
 
-    <div id="mobile-menu" class="mobile-menu-overlay fixed inset-0 bg-white bg-opacity-95 justify-center items-center">
-        <div class="menu-content p-8 pt-20 flex flex-col items-center justify-center">
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white/95 backdrop-blur-xl z-[100] transition-all duration-500 ease-in-out transform translate-x-full opacity-0 pointer-events-none [&.is-open]:translate-x-0 [&.is-open]:opacity-100 [&.is-open]:pointer-events-auto">
 
-            <button id="close-button" class="absolute top-5 right-5 p-2 text-gray-800 hover:bg-gray-100 rounded-lg">
-                <i data-lucide="x" class="w-8 h-8"></i>
+        <div class="flex justify-between items-center p-8">
+            <div class="text-xs font-black tracking-[0.3em] text-gray-400">MENU</div>
+            <button id="close-button"
+                class="p-3 text-gray-900 bg-gray-50 rounded-full hover:bg-gray-100 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
             </button>
+        </div>
 
-            <nav class="flex flex-col space-y-8 text-center">
-                <a href="#about"
-                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">About
-                    Me</a>
-                <a href="#education"
-                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">Academics</a>
-                <a href="#achievements"
-                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">Recognition</a>
-                <a href="#services"
-                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">Expertise</a>
-                <a href="#projects"
-                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">My
-                    Work</a>
-                <a href="#skills"
-                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">Toolbox</a>
-                <a href="#contact"
-                    class="text-3xl font-extrabold text-gray-800 hover:text-amber-500 transition duration-150 menu-link">Get
-                    in Touch</a>
+        <div class="h-full flex flex-col justify-start px-12 pt-10">
+            <nav class="flex flex-col space-y-6">
+                <a href="#about" class="group flex items-end gap-4 menu-link">
+                    <span class="text-[10px] font-black text-amber-500 mb-2 tracking-tighter">01.</span>
+                    <span
+                        class="text-4xl font-black text-gray-900 group-hover:text-amber-500 transition-all duration-300">About</span>
+                </a>
+
+                <a href="#education" class="group flex items-end gap-4 menu-link">
+                    <span class="text-[10px] font-black text-amber-500 mb-2 tracking-tighter">02.</span>
+                    <span
+                        class="text-4xl font-black text-gray-900 group-hover:text-amber-500 transition-all duration-300">Academics</span>
+                </a>
+
+                <a href="#services" class="group flex items-end gap-4 menu-link">
+                    <span class="text-[10px] font-black text-amber-500 mb-2 tracking-tighter">03.</span>
+                    <span
+                        class="text-4xl font-black text-gray-900 group-hover:text-amber-500 transition-all duration-300">Expertise</span>
+                </a>
+
+                <a href="#projects" class="group flex items-end gap-4 menu-link">
+                    <span class="text-[10px] font-black text-amber-500 mb-2 tracking-tighter">04.</span>
+                    <span
+                        class="text-4xl font-black text-gray-900 group-hover:text-amber-500 transition-all duration-300">My
+                        Work</span>
+                </a>
+
+                <a href="#contact" class="group flex items-end gap-4 menu-link">
+                    <span class="text-[10px] font-black text-amber-500 mb-2 tracking-tighter">05.</span>
+                    <span
+                        class="text-4xl font-black text-gray-900 group-hover:text-amber-500 transition-all duration-300">Contact</span>
+                </a>
             </nav>
+
+            <div class="mt-auto pb-20 pt-10 border-t border-gray-100">
+                <p class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">Let's Connect</p>
+                <div class="flex gap-8">
+                    <a href="#" class="text-gray-900 hover:text-amber-500 transition-colors"><i data-lucide="github"
+                            class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-900 hover:text-amber-500 transition-colors"><i data-lucide="linkedin"
+                            class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-900 hover:text-amber-500 transition-colors"><i data-lucide="mail"
+                            class="w-5 h-5 mt-0.5"></i></a>
+                </div>
+            </div>
         </div>
     </div>
-
     <main class="min-h-screen pt-24 lg:pt-0 flex flex-col lg:flex-row bg-white items-center overflow-hidden relative">
 
         <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -309,23 +142,17 @@ body {
             <p
                 class="text-base lg:text-lg text-gray-500 mb-12 max-w-sm leading-relaxed font-light text-justify md:text-left">
                 I’m a developer who loves the puzzle of coding and the joy of seeing an idea actually come to life.
-                Specialized in <span class="text-gray-900 font-bold">AI & ML</span> solutions.
+                Specialized in AI & ML solutions.
             </p>
 
-            <div class="flex items-center mt-4">
-                <a href="#projects" class="group relative flex items-center gap-3 py-2 overflow-hidden">
-
-                    <span
-                        class="text-[11px] font-black uppercase tracking-[0.4em] text-gray-900 transition-all duration-300 group-hover:text-amber-600">
+            <div class="flex items-center justify-center lg:justify-start mt-8">
+                <a href="#projects"
+                    class="group flex items-center gap-3 bg-gray-900 hover:bg-amber-500 text-white px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-amber-200">
+                    <span class="text-[11px] font-black uppercase tracking-[0.2em]">
                         View Projects
                     </span>
-
-                    <i data-lucide="arrow-up-right"
-                        class="w-4 h-4 text-amber-500 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
-                    </i>
-
-                    <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gray-100">
-                        <div class="w-0 h-full bg-amber-500 transition-all duration-500 group-hover:w-full"></div>
+                    <div class="bg-white/20 rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </div>
                 </a>
             </div>
@@ -365,13 +192,17 @@ body {
     <section id="about" class="py-12 lg:py-24 px-4 lg:px-16 max-w-7xl mx-auto border-b border-gray-50">
         <div class="flex flex-col lg:flex-row gap-6 lg:gap-12 items-start">
 
-            <div class="lg:w-1/3 lg:sticky lg:top-24">
+            <div class="w-full lg:w-1/3 lg:sticky lg:top-24 text-center lg:text-left">
                 <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
                     About <span class="text-amber-500">Me</span>
                 </h2>
-                <div class="w-12 lg:w-16 h-1.5 lg:h-2 bg-amber-500 mt-3 lg:mt-4 mb-4 lg:mb-6"></div>
-                <p class="text-gray-400 text-[10px] lg:text-sm font-bold uppercase tracking-widest mb-6 lg:mb-12">My
-                    Developer Journey</p>
+
+                <div class="w-12 lg:w-16 h-1.5 lg:h-2 bg-amber-500 mt-3 lg:mt-4 mb-4 lg:mb-6 mx-auto lg:mx-0"></div>
+
+                <p
+                    class="hidden lg:block text-gray-400 text-[10px] lg:text-sm font-bold uppercase tracking-widest mb-6 lg:mb-12">
+                    My Developer Journey
+                </p>
             </div>
 
             <div class="lg:w-2/3 bg-gray-50 p-6 md:p-16 rounded-[30px] lg:rounded-[40px]">
@@ -396,12 +227,17 @@ body {
     </section>
     <section id="experience" class="py-16 px-4 lg:px-16 max-w-4xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-black text-gray-900 tracking-tighter">
+
+            <h2 class="text-4xl lg:text-5xl font-black text-gray-900 tracking-tighter">
                 Professional <span class="text-amber-500">Experience</span>
             </h2>
             <div class="w-12 h-1 bg-amber-500 mx-auto mt-4 mb-4"></div>
-            <p class="text-gray-400 text-[10px] font-black uppercase tracking-[0.4em]">Industry exposure through applied
-                data-driven problem solving</p>
+
+
+            <p
+                class="hidden lg:block text-gray-400 text-[10px] lg:text-sm font-bold uppercase tracking-widest mb-6 lg:mb-12">
+                Industry exposure through applied data-driven problem solving
+            </p>
         </div>
 
         <div class="group relative">
@@ -474,46 +310,7 @@ body {
     </section>
 
 
-    <style>
-        /* Smooth Magnetic Button */
-        .btn-premium {
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-        }
 
-        .btn-premium:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px -10px rgba(245, 158, 11, 0.4);
-            background-color: #f59e0b;
-        }
-
-        /* Highly Readable Tech Tags */
-        .tech-pill {
-            background-color: #fffbeb;
-            /* Amber 50 */
-            color: #92400e;
-            /* Amber 800 */
-            border: 1px solid #fde68a;
-            /* Amber 200 */
-            padding: 4px 12px;
-            border-radius: 8px;
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-
-        /* Card Shadow & Border */
-        .project-card-lg {
-            border: 1px solid rgba(0, 0, 0, 0.03);
-            transition: all 0.5s ease;
-        }
-
-        .project-card-lg:hover {
-            border-color: rgba(245, 158, 11, 0.3);
-            box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.08);
-        }
-    </style>
 
     <section id="projects" class="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
         <div class="text-center mb-20">
@@ -692,45 +489,54 @@ body {
                 </span>
             </a>
         </div>
+    </section>
 
-        <script>
-            document.getElementById('show-more-btn').addEventListener('click', function () {
-                const extraProjects = document.getElementById('extra-projects');
-                const githubBtn = document.getElementById('github-redirect-btn');
-                const loadMoreBtn = this;
+    <script>
+        document.getElementById('show-more-btn').addEventListener('click', function () {
+            const extraProjects = document.getElementById('extra-projects');
+            const githubBtn = document.getElementById('github-redirect-btn');
+            const loadMoreBtn = this;
 
-                // 1. Reveal the hidden projects
-                extraProjects.classList.remove('hidden');
+            // 1. Reveal the hidden projects
+            extraProjects.classList.remove('hidden');
 
-                // 2. Trigger smooth fade-in for projects
-                setTimeout(() => {
-                    extraProjects.classList.add('opacity-100');
-                    extraProjects.classList.remove('opacity-0');
-                }, 10);
+            // 2. Trigger smooth fade-in for projects
+            setTimeout(() => {
+                extraProjects.classList.add('opacity-100');
+                extraProjects.classList.remove('opacity-0');
+            }, 10);
 
-                // 3. Hide the current button and show the GitHub button
-                loadMoreBtn.classList.add('hidden');
-                githubBtn.classList.remove('hidden');
+            // 3. Hide the current button and show the GitHub button
+            loadMoreBtn.classList.add('hidden');
+            githubBtn.classList.remove('hidden');
 
-                // 4. Trigger smooth fade-in for the new GitHub button
-                setTimeout(() => {
-                    githubBtn.classList.add('opacity-100');
-                    githubBtn.classList.remove('opacity-0');
-                }, 50);
+            // 4. Trigger smooth fade-in for the new GitHub button
+            setTimeout(() => {
+                githubBtn.classList.add('opacity-100');
+                githubBtn.classList.remove('opacity-0');
+            }, 50);
 
-                // Refresh icons if using Lucide
-                if (window.lucide) lucide.createIcons();
-            });
-        </script>
+            // Refresh icons if using Lucide
+            if (window.lucide) lucide.createIcons();
+        });
+    </script>
 
-        <section id="skills" class="py-20 px-8 lg:px-16 max-w-7xl mx-auto">
-            <h2 class="text-4xl font-extrabold text-center mb-4">Tech Stack & Skills</h2>
-            <p class="text-center text-lg text-gray-500 mb-12">
-                Tools, languages, and frameworks I use to bring ideas to life
-            </p>
+    <section id="skills" class="w-full py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-8 lg:px-16">
+
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 tracking-tighter">
+                    Technical <span class="text-amber-500">Expertise</span>
+                </h2>
+                <div class="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+
+                <p
+                    class="hidden lg:block text-gray-400 text-[10px] lg:text-sm font-bold uppercase tracking-widest mt-6">
+                    Tools, languages, and frameworks I use to bring ideas to life
+                </p>
+            </div>
 
             <div class="flex flex-wrap justify-center gap-4 md:gap-6">
-                <!-- Programming Languages -->
                 <div
                     class="flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
                     <span>Python</span>
@@ -748,7 +554,6 @@ body {
                     <span>R Programming</span>
                 </div>
 
-                <!-- Web Development -->
                 <div
                     class="flex items-center bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
                     <span>HTML5</span>
@@ -774,7 +579,6 @@ body {
                     <span>PHP</span>
                 </div>
 
-                <!-- Data Science & ML -->
                 <div
                     class="flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
                     <span>Scikit-learn</span>
@@ -792,13 +596,11 @@ body {
                     <span>Matplotlib</span>
                 </div>
 
-                <!-- Databases -->
                 <div
                     class="flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
                     <span>MySQL</span>
                 </div>
 
-                <!-- Tools & Platforms -->
                 <div
                     class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
                     <span>Git</span>
@@ -819,311 +621,326 @@ body {
                     class="flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-[1.05] transition duration-200">
                     <span>Figma</span>
                 </div>
-        </section>
-
-        <section id="education" class="py-24 px-4 lg:px-16 max-w-7xl mx-auto">
-            <div class="flex flex-col lg:flex-row gap-12 items-start">
-
-                <div class="lg:w-1/3 lg:sticky lg:top-24">
-                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 leading-tight tracking-tighter">
-                        Academic <span class="text-amber-500">Journey</span>
-                    </h2>
-                    <div class="w-16 h-2 bg-amber-500 mt-4 mb-6 rounded-full"></div>
-
-                    <p class="hidden lg:block text-gray-500 text-lg leading-relaxed max-w-sm">
-                        Building a rigorous theoretical foundation and practical expertise in modern computing.
-                    </p>
-                </div>
-
-                <div class="lg:w-2/3 space-y-16">
-
-                    <div class="relative pl-10 border-l-4 border-gray-200 group">
-                        <div
-                            class="absolute -left-[14px] top-1.5 w-6 h-6 bg-white border-4 border-amber-500 rounded-full group-hover:bg-amber-500 transition-all duration-300">
-                        </div>
-
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-                            <div>
-                                <h3
-                                    class="text-2xl font-black text-gray-900 tracking-tight leading-tight group-hover:text-amber-600 transition-colors">
-                                    B.Tech in Information Technology
-                                </h3>
-                                <p class="text-lg font-normal text-gray-500 mt-1">Government Engineering College
-                                    Palakkad</p>
-
-                                <div class="mt-4 flex items-center gap-2">
-                                    <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">CGPA
-                                        —</span>
-                                    <span class="text-lg font-black text-gray-900">9.52</span>
-                                </div>
-                            </div>
-                            <span
-                                class="text-[11px] font-black text-amber-600 bg-amber-50 px-4 py-1.5 rounded-full uppercase tracking-widest whitespace-nowrap self-start">
-                                2022 — 2026
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="relative pl-10 border-l-4 border-gray-200 group">
-                        <div
-                            class="absolute -left-[14px] top-1.5 w-6 h-6 bg-white border-4 border-gray-300 rounded-full group-hover:border-amber-500 transition-all duration-300">
-                        </div>
-
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-                            <div>
-                                <h3 class="text-2xl font-black text-gray-900 tracking-tight leading-tight">
-                                    Higher Secondary Education
-                                </h3>
-                                <p class="text-lg font-normal text-gray-500 mt-1">GHSS Pattambi</p>
-
-                                <div class="mt-4 flex items-center gap-2">
-                                    <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Final
-                                        Result —</span>
-                                    <span class="text-lg font-black text-gray-900">99.33%</span>
-                                </div>
-                            </div>
-                            <span
-                                class="text-[11px] font-black text-amber-600 bg-amber-50 px-4 py-1.5 rounded-full uppercase tracking-widest whitespace-nowrap self-start">
-                                2020 — 2022
-                            </span>
-                        </div>
-                    </div>
-
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="achievements" class="py-24 px-4 lg:px-16 max-w-7xl mx-auto">
-            <div class="text-center mb-16 md:mb-20">
-                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 tracking-tighter">
-                    Key <span class="text-amber-500">Recognition</span>
+    <section id="education" class="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-12 items-start">
+
+            <div class="w-full lg:w-1/3 lg:sticky lg:top-24 text-center lg:text-left">
+                <h2 class="text-4xl md:text-5xl font-black text-gray-900 leading-tight tracking-tighter">
+                    Academic <span class="text-amber-500">Journey</span>
                 </h2>
-                <div class="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+
+                <div class="w-16 h-2 bg-amber-500 mt-4 mb-6 rounded-full mx-auto lg:mx-0"></div>
+
+
+                <p
+                    class="hidden lg:block text-gray-400 text-[10px] lg:text-sm font-bold uppercase tracking-widest mb-6 lg:mb-12">
+                    Building a rigorous theoretical foundation and practical expertise in modern computing.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12 max-w-6xl mx-auto">
-
-                <div class="group flex items-start gap-6 transition-all duration-300">
+            <div class="lg:w-2/3 space-y-16">
+                <div class="relative pl-10 border-l-4 border-gray-200 group">
                     <div
-                        class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
-                        <i data-lucide="trophy" class="w-5 h-5"></i>
+                        class="absolute -left-[14px] top-1.5 w-6 h-6 bg-white border-4 border-amber-500 rounded-full group-hover:bg-amber-500 transition-all duration-300">
                     </div>
-                    <div class="w-full">
-                        <h3 class="text-xl font-black text-gray-900 leading-tight">
-                            Top 6 Finalist – SciSol
-                        </h3>
-                        <p
-                            class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] border border-amber-200">
-                            38th Kerala Science Congress
-                        </p>
-                        <p class="text-gray-500 text-sm leading-relaxed text-justify">
-                            Selected from 73 competitive entries for an oral presentation, delivering a science-driven
-                            solution addressing real-world community challenges through technical innovation.
-                        </p>
+
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+                        <div class="text-left">
+                            <h3
+                                class="text-2xl font-black text-gray-900 tracking-tight leading-tight group-hover:text-amber-600 transition-colors">
+                                B.Tech in Information Technology
+                            </h3>
+                            <p class="text-lg font-normal text-gray-500 mt-1">Government Engineering College Palakkad
+                            </p>
+
+                            <div class="mt-4 flex items-center gap-2">
+                                <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">CGPA
+                                    —</span>
+                                <span class="text-lg font-black text-gray-900">9.52</span>
+                            </div>
+                        </div>
+                        <span
+                            class="text-[11px] font-black text-amber-600 bg-amber-50 px-4 py-1.5 rounded-full uppercase tracking-widest whitespace-nowrap self-start">
+                            2022 — 2026
+                        </span>
                     </div>
                 </div>
 
-                <div class="group flex items-start gap-6 transition-all duration-300">
+                <div class="relative pl-10 border-l-4 border-gray-200 group">
                     <div
-                        class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
-                        <i data-lucide="award" class="w-5 h-5"></i>
+                        class="absolute -left-[14px] top-1.5 w-6 h-6 bg-white border-4 border-gray-300 rounded-full group-hover:border-amber-500 transition-all duration-300">
                     </div>
-                    <div class="w-full">
-                        <h3 class="text-xl font-black text-gray-900 leading-tight">
-                            Database Management Systems
-                        </h3>
-                        <p
-                            class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] border border-amber-200">
-                            IIT Kharagpur (NPTEL)
-                        </p>
-                        <p class="text-gray-500 text-sm leading-relaxed text-justify">
-                            Achieved national ranking among 7,000+ learners, demonstrating mastery in SQL,
-                            normalization, and database architecture through rigorous academic evaluation.
-                        </p>
+
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+                        <div class="text-left">
+                            <h3 class="text-2xl font-black text-gray-900 tracking-tight leading-tight">
+                                Higher Secondary Education
+                            </h3>
+                            <p class="text-lg font-normal text-gray-500 mt-1">GHSS Pattambi</p>
+
+                            <div class="mt-4 flex items-center gap-2">
+                                <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Final
+                                    Result —</span>
+                                <span class="text-lg font-black text-gray-900">99.33%</span>
+                            </div>
+                        </div>
+                        <span
+                            class="text-[11px] font-black text-amber-600 bg-amber-50 px-4 py-1.5 rounded-full uppercase tracking-widest whitespace-nowrap self-start">
+                            2020 — 2022
+                        </span>
                     </div>
                 </div>
-
-                <div class="group flex items-start gap-6 transition-all duration-300">
-                    <div
-                        class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
-                        <i data-lucide="medal" class="w-5 h-5"></i>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="text-xl font-black text-gray-900 leading-tight">
-                            CSD Forum "CSSense"
-                        </h3>
-                        <p
-                            class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] border border-amber-200">
-                            ISTE Student Chapter
-                        </p>
-                        <p class="text-gray-500 text-sm leading-relaxed text-justify">
-                            Secured first place in the technical event representing GEC Palakkad at the Government
-                            Engineering College, Kozhikode, showcasing rapid problem-solving skills.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="group flex items-start gap-6 transition-all duration-300">
-                    <div
-                        class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
-                        <i data-lucide="code-2" class="w-5 h-5"></i>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="text-xl font-black text-gray-900 leading-tight">
-                            Python Programming
-                        </h3>
-                        <p
-                            class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] border border-amber-200">
-                            Infosys Springboard
-                        </p>
-                        <p class="text-gray-500 text-sm leading-relaxed text-justify">
-                            Validated core proficiency in object-oriented programming and industry-standard development
-                            techniques through a comprehensive industry-led certification.
-                        </p>
-                    </div>
-                </div>
-
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="services" class="py-24 px-2 lg:px-16 max-w-7xl mx-auto">
-            <div class="flex flex-col lg:flex-row gap-12 items-start">
+    <section id="achievements" class="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
+        <div class="text-center mb-16 md:mb-20">
+            <h2 class="text-4xl lg:text-5xl font-black text-gray-900 tracking-tighter">
+                Key <span class="text-amber-500">Recognition</span>
+            </h2>
+            <div class="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+        </div>
 
-                <div class="lg:w-1/3 lg:sticky lg:top-24">
-                    <h2 class="text-5xl font-extrabold text-gray-900 leading-tight">
-                        What <span class="text-amber-500">I Do</span>
-                    </h2>
-                    <div class="w-16 h-2 bg-amber-500 mt-4 mb-6"></div>
-                    <p class="text-gray-500 text-lg leading-relaxed">
-                        I combine technical expertise with creative problem-solving to build meaningful digital
-                        experiences.
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12 max-w-6xl mx-auto">
+
+            <div class="group flex items-start gap-6 transition-all duration-300">
+                <div
+                    class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
+                    <i data-lucide="trophy" class="w-5 h-5"></i>
+                </div>
+                <div class="w-full">
+                    <h3 class="text-xl font-black text-gray-900 leading-tight">
+                        Top 6 Finalist – SciSol
+                    </h3>
+                    <p
+                        class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em]">
+                        38th Kerala Science Congress
+                    </p>
+                    <p class="text-gray-500 text-sm leading-relaxed text-justify">
+                        Selected as a Top <span
+                            class="font-bold text-amber-600 decoration-2 underline-offset-4 decoration-amber-200">6
+                            finalist out of 73</span> competitive entries to deliver an oral presentation,
+                        presenting a science-driven solution
+                        addressing real-world community challenges through technical innovation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="group flex items-start gap-6 transition-all duration-300">
+                <div
+                    class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
+                    <i data-lucide="award" class="w-5 h-5"></i>
+                </div>
+                <div class="w-full">
+                    <h3 class="text-xl font-black text-gray-900 leading-tight">
+                        Database Management Systems
+                    </h3>
+                    <p
+                        class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em]">
+                        IIT Kharagpur (NPTEL)
+                    </p>
+                    <p class="text-gray-500 text-sm leading-relaxed text-justify">
+                        Ranked in the <span
+                            class="font-bold text-amber-600 decoration-2 underline-offset-4 decoration-amber-200">Top 5%
+                            among 7,000+</span> learners nationwide, demonstrating mastery in SQL,
+                        normalization, and database architecture through rigorous academic evaluation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="group flex items-start gap-6 transition-all duration-300">
+                <div
+                    class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
+                    <i data-lucide="medal" class="w-5 h-5"></i>
+                </div>
+                <div class="w-full">
+                    <h3 class="text-xl font-black text-gray-900 leading-tight">
+                        CSD Forum "CSSense"
+                    </h3>
+                    <p
+                        class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em] ">
+                        ISTE Student Chapter
+                    </p>
+                    <p class="text-gray-500 text-sm leading-relaxed text-justify">
+                        Won First Place in a Web Development Competition conducted by Government Engineering College,
+                        Kozhikode,
+                        showcasing excellence in UI design and CSS implementation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="group flex items-start gap-6 transition-all duration-300">
+                <div
+                    class="hidden md:flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all shrink-0">
+                    <i data-lucide="code-2" class="w-5 h-5"></i>
+                </div>
+                <div class="w-full">
+                    <h3 class="text-xl font-black text-gray-900 leading-tight">
+                        Python Programming
+                    </h3>
+                    <p
+                        class="inline-block text-[10px] font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-md mt-2 mb-3 uppercase tracking-[0.15em]">
+                        Infosys Springboard
+                    </p>
+                    <p class="text-gray-500 text-sm leading-relaxed text-justify">
+                        Validated core proficiency in object-oriented programming and industry-standard development
+                        techniques through a comprehensive industry-led certification.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-2 lg:px-16 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-12 items-start">
+
+            <div class="w-full lg:w-1/3 lg:sticky lg:top-24 text-center lg:text-left">
+                <h2 class="text-5xl font-extrabold text-gray-900 leading-tight">
+                    What <span class="text-amber-500">I Do</span>
+                </h2>
+
+                <div class="w-16 h-2 bg-amber-500 mt-4 mb-6 rounded-full mx-auto lg:mx-0"></div>
+
+                <p
+                    class="hidden lg:block text-gray-400 text-[10px] lg:text-sm font-bold uppercase tracking-widest mb-6 lg:mb-12">
+                    I combine technical expertise with creative problem-solving to build meaningful digital experiences.
+                </p>
+            </div>
+
+            <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div
+                    class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 mx-auto lg:mx-0 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="code-2" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center lg:text-left">Web Development</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed text-center lg:text-left">
+                        I build modern, high-performance websites that look great and work flawlessly on any device. I
+                        focus on creating fast, reliable, and scalable digital solutions.
                     </p>
                 </div>
 
-                <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
-
+                <div
+                    class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
                     <div
-                        class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
-                        <div
-                            class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                            <i data-lucide="code-2" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Web Development</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">
-                            I build modern, high-performance websites that look great and work flawlessly on any device.
-                            I
-                            focus on creating fast, reliable, and scalable digital solutions.
-                        </p>
+                        class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 mx-auto lg:mx-0 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="framer" class="w-7 h-7"></i>
                     </div>
-
-                    <div
-                        class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
-                        <div
-                            class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                            <i data-lucide="framer" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">UI/UX Design</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">
-                            I design user-friendly interfaces that are intuitive and visually stunning. My goal is to
-                            create
-                            smooth digital experiences that make interacting with technology simple.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
-                        <div
-                            class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                            <i data-lucide="bar-chart-big" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Data Science & AI</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">
-                            I turn complex data into clear insights and build intelligent systems that solve real-world
-                            problems. I use analytics to help make smarter, data-driven decisions.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
-                        <div
-                            class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                            <i data-lucide="users" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Technical Mentoring</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">
-                            I guide aspiring developers through the world of code and logic. By breaking down difficult
-                            concepts, I help others grow their skills and build a strong foundation.
-                        </p>
-                    </div>
-
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center lg:text-left">UI/UX Design</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed text-center lg:text-left">
+                        I design user-friendly interfaces that are intuitive and visually stunning. My goal is to create
+                        smooth digital experiences that make interacting with technology simple.
+                    </p>
                 </div>
+
+                <div
+                    class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 mx-auto lg:mx-0 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="bar-chart-big" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center lg:text-left">Data Science & AI</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed text-center lg:text-left">
+                        I turn complex data into clear insights and build intelligent systems that solve real-world
+                        problems. I use analytics to help make smarter, data-driven decisions.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 mx-auto lg:mx-0 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="users" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center lg:text-left">Technical Mentoring</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed text-center lg:text-left">
+                        I guide aspiring developers through the world of code and logic. By breaking down difficult
+                        concepts, I help others grow their skills and build a strong foundation.
+                    </p>
+                </div>
+
             </div>
-        </section>
-
-        <footer id="contact" class="w-full bg-[#0f172a] mt-20 pt-16 pb-0">
-    
-    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
-        
-        <h2 class="text-4xl font-black text-white tracking-tighter text-center">
-            Let's <span class="text-amber-400">Collaborate</span>
-        </h2>
-        <div class="w-12 h-1.5 bg-amber-400 mt-3 mb-10 rounded-full"></div>
-
-        <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 mb-12">
-            <a href="mailto:darsanadr04@gmail.com" class="group flex items-center gap-3">
-                <i data-lucide="mail" class="w-5 h-5 text-gray-400 group-hover:text-amber-400 transition-colors"></i>
-                <span class="text-sm font-bold text-gray-300 group-hover:text-white transition-colors">darsanadr04@gmail.com</span>
-            </a>
-            <a href="https://linkedin.com/in/darsanar" target="_blank" class="group flex items-center gap-3">
-                <i data-lucide="linkedin" class="w-5 h-5 text-gray-400 group-hover:text-amber-400 transition-colors"></i>
-                <span class="text-sm font-bold text-gray-300 group-hover:text-white transition-colors">LinkedIn</span>
-            </a>
-            <a href="https://github.com/Darsana-Ramesh" target="_blank" class="group flex items-center gap-3">
-                <i data-lucide="github" class="w-5 h-5 text-gray-400 group-hover:text-amber-400 transition-colors"></i>
-                <span class="text-sm font-bold text-gray-300 group-hover:text-white transition-colors">GitHub</span>
-            </a>
         </div>
+    </section>
 
-        <div class="w-full text-center pb-8">
-            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.4em] leading-none m-0">
-                &copy; 2026 <span class="text-white">DARSANA R.</span> • BUILT WITH PASSION
-            </p>
+    <footer id="contact" class="w-full bg-[#0f172a] mt-20 pt-16 pb-0">
+
+        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+
+            <h2 class="text-4xl font-black text-white tracking-tighter text-center">
+                Let's <span class="text-amber-400">Collaborate</span>
+            </h2>
+            <div class="w-12 h-1.5 bg-amber-400 mt-3 mb-10 rounded-full"></div>
+
+            <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 mb-12">
+
+                <a href="https://linkedin.com/in/darsanar" target="_blank" class="group flex items-center gap-3">
+                    <i data-lucide="linkedin"
+                        class="w-5 h-5 text-gray-400 group-hover:text-amber-400 transition-colors"></i>
+                    <span
+                        class="text-sm font-bold text-gray-300 group-hover:text-white transition-colors">LinkedIn</span>
+                </a>
+                <a href="https://github.com/Darsana-Ramesh" target="_blank" class="group flex items-center gap-3">
+                    <i data-lucide="github"
+                        class="w-5 h-5 text-gray-400 group-hover:text-amber-400 transition-colors"></i>
+                    <span class="text-sm font-bold text-gray-300 group-hover:text-white transition-colors">GitHub</span>
+                </a>
+                <a href="mailto:darsanadr04@gmail.com" class="group flex items-center gap-3">
+                    <i data-lucide="mail"
+                        class="w-5 h-5 text-gray-400 group-hover:text-amber-400 transition-colors"></i>
+                    <span
+                        class="text-sm font-bold text-gray-300 group-hover:text-white transition-colors">darsanadr04@gmail.com</span>
+                </a>
+            </div>
+
+            <div class="w-full text-center pb-8">
+                <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.4em] leading-none m-0">
+                    &copy; 2026 <span class="text-white">DARSANA R</span> • BUILT WITH PASSION
+                </p>
+
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-        <script>
-            lucide.createIcons();
+    <script>
+        lucide.createIcons();
 
-            const menuButton = document.getElementById('menu-button');
-            const closeButton = document.getElementById('close-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuLinks = document.querySelectorAll('.menu-link');
-            const desktopLinks = document.querySelectorAll('.desktop-link');
+        const menuButton = document.getElementById('menu-button');
+        const closeButton = document.getElementById('close-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = document.querySelectorAll('.menu-link');
+        const desktopLinks = document.querySelectorAll('.desktop-link');
 
-            function toggleMenu() {
-                mobileMenu.classList.toggle('is-open');
-                const isOpen = mobileMenu.classList.contains('is-open');
-                // Prevent scrolling when the menu is open
-                document.body.classList.toggle('overflow-hidden', isOpen);
-            }
+        function toggleMenu() {
+            mobileMenu.classList.toggle('is-open');
+            const isOpen = mobileMenu.classList.contains('is-open');
+            // Prevent scrolling when the menu is open
+            document.body.classList.toggle('overflow-hidden', isOpen);
+        }
 
-            menuButton.addEventListener('click', toggleMenu);
-            closeButton.addEventListener('click', toggleMenu);
+        menuButton.addEventListener('click', toggleMenu);
+        closeButton.addEventListener('click', toggleMenu);
 
-            menuLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    // Close the menu after a link is clicked
-                    setTimeout(toggleMenu, 100);
-                });
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Close the menu after a link is clicked
+                setTimeout(toggleMenu, 100);
             });
+        });
 
-            // Optional: Close menu when clicking desktop links (though not strictly necessary)
-            // desktopLinks.forEach(link => {
-            //     link.addEventListener('click', function(e) {
-            //     });
-            // });
-        </script>
+        // Optional: Close menu when clicking desktop links (though not strictly necessary)
+        // desktopLinks.forEach(link => {
+        //     link.addEventListener('click', function(e) {
+        //     });
+        // });
+    </script>
 </body>
 
 

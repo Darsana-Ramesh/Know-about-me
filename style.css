@@ -1,0 +1,236 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8F8F8;
+    overflow-x: hidden;
+    margin: 0 !important;
+    /* Fixes the white border around the page */
+    padding: 0 !important;
+    /* Fixes the white border around the page */
+}
+
+/* Updated curve-desktop for a stylish, modern look */
+.curve-desktop {
+    /* This is the large screen style */
+    border-bottom-left-radius: 200px;
+    border-top-left-radius: 50px;
+}
+
+@media (max-width: 1023px) {
+
+    /* Applies to tablet (md) and mobile (sm/default) */
+    .curve-desktop {
+        border-radius: 0;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+    }
+}
+
+/* Adjusted hero-image styles for better fit within a dynamic height container */
+.hero-image {
+    transform: translateY(0);
+    object-fit: cover;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    /* Fill container height dynamically */
+    border-radius: 0;
+}
+
+/* Removed fixed heights from your custom CSS for lg screens */
+@media (min-width: 1024px) {
+
+    /* We rely on the flex-1 and the surrounding content's height to define the image container's height */
+    .lg\:-ml-6 {
+        margin-left: -0.5rem;
+    }
+}
+
+/* Smooth Magnetic Button */
+.btn-premium {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.btn-premium:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -10px rgba(245, 158, 11, 0.4);
+    background-color: #f59e0b;
+}
+
+/* Highly Readable Tech Tags */
+.tech-pill {
+    background-color: #fffbeb;
+    /* Amber 50 */
+    color: #92400e;
+    /* Amber 800 */
+    border: 1px solid #fde68a;
+    /* Amber 200 */
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/* Card Shadow & Border */
+.project-card-lg {
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.5s ease;
+}
+
+.project-card-lg:hover {
+    border-color: rgba(245, 158, 11, 0.3);
+    box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile menu styles remain effective */
+.mobile-menu-overlay {
+    z-index: 60;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-out;
+    display: flex;
+}
+
+.mobile-menu-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-menu-overlay .menu-content {
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    height: 100%;
+    width: 100%;
+}
+
+.mobile-menu-overlay.is-open .menu-content {
+    transform: translateY(0);
+}
+
+/* Custom Styles for New Sections */
+.service-boxes {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .service-boxes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .service-boxes {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.service-box {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #F59E0B;
+    /* Amber-500 equivalent */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Center box content, as requested for new box sections */
+    text-align: center;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.service-box h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1F2937;
+    /* Gray-800 equivalent */
+}
+
+.service-box p {
+    font-size: 1rem;
+    color: #4B5563;
+    /* Gray-600 equivalent */
+}
+
+.article-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    max-width: 6xl;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article-container article {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 80px;
+    /* Standard size for an icon box */
+}
+
+.article-container article:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.tool-icon {
+    width: 100%;
+    height: 50px;
+    /* Fixed height for the image */
+    object-fit: contain;
+    /* Ensure the image fits without cropping and maintains aspect ratio */
+}
+
+.section__text__p1 {
+    text-align: center;
+    color: #6B7280;
+    /* Gray-500 */
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Custom CSS to justify text in the About section */
+#about p {
+    text-align: justify;
+    text-justify: inter-word;
+    /* Better justification control for some browsers */
+}
+
+/* Center align content in new box sections: projects, involvement, achievements (certifications) */
+.project-box-content,
+.involvement-box,
+.achievement-box {
+    text-align: center;
+}
+
+@keyframes scan {
+    0% {
+        top: 0%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+.animate-scan {
+    animation: scan 2.5s linear infinite;
+}
