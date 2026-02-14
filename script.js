@@ -62,3 +62,52 @@ if (window.visualViewport) {
         }
     });
 }
+
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section, main');
+    const navDots = document.querySelectorAll('.nav-dot');
+
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 200)) {
+            current = section.getAttribute('id') || 'home';
+        }
+    });
+
+    navDots.forEach(dot => {
+        dot.classList.remove('active');
+        if (dot.getAttribute('data-section') === current) {
+            dot.classList.add('active');
+        }
+    });
+});
+
+window.addEventListener('scroll', () => {
+    // Progress Bar Logic
+    const progressBar = document.getElementById('scroll-progress');
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+
+    const sections = document.querySelectorAll('section, main');
+    const navDots = document.querySelectorAll('.nav-dot');
+
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= (sectionTop - 250)) {
+            current = section.getAttribute('id') || 'home';
+        }
+    });
+
+    navDots.forEach(dot => {
+        dot.classList.remove('active');
+        if (dot.getAttribute('data-section') === current) {
+            dot.classList.add('active');
+        }
+    });
+});
+
