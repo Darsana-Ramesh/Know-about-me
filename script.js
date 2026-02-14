@@ -1,4 +1,3 @@
-
 lucide.createIcons();
 
 const menuButton = document.getElementById('menu-button');
@@ -23,12 +22,6 @@ menuLinks.forEach(link => {
         setTimeout(toggleMenu, 100);
     });
 });
-
-// Optional: Close menu when clicking desktop links (though not strictly necessary)
-// desktopLinks.forEach(link => {
-//     link.addEventListener('click', function(e) {
-//     });
-// });
 
 document.getElementById('show-more-btn').addEventListener('click', function () {
     const extraProjects = document.getElementById('extra-projects');
@@ -58,3 +51,14 @@ document.getElementById('show-more-btn').addEventListener('click', function () {
     if (window.lucide) lucide.createIcons();
 });
 
+if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', () => {
+        const img = document.querySelector('.dynamic-image');
+        // If the visual viewport scale is greater than 1, the user has zoomed in
+        if (window.visualViewport.scale > 1) {
+            img.classList.add('is-zoomed');
+        } else {
+            img.classList.remove('is-zoomed');
+        }
+    });
+}

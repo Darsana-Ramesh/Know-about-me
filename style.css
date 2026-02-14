@@ -6,22 +6,17 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #F8F8F8;
     overflow-x: hidden;
-    margin: 0 !important;
-    /* Fixes the white border around the page */
-    padding: 0 !important;
-    /* Fixes the white border around the page */
+    margin: 0;
+    padding: 0;
+    
 }
 
-/* Updated curve-desktop for a stylish, modern look */
 .curve-desktop {
-    /* This is the large screen style */
     border-bottom-left-radius: 200px;
     border-top-left-radius: 50px;
 }
 
 @media (max-width: 1023px) {
-
-    /* Applies to tablet (md) and mobile (sm/default) */
     .curve-desktop {
         border-radius: 0;
         border-top-left-radius: 100px;
@@ -29,27 +24,21 @@ body {
     }
 }
 
-/* Adjusted hero-image styles for better fit within a dynamic height container */
 .hero-image {
     transform: translateY(0);
     object-fit: cover;
     width: 100%;
     max-width: none;
     height: 100%;
-    /* Fill container height dynamically */
     border-radius: 0;
 }
 
-/* Removed fixed heights from your custom CSS for lg screens */
 @media (min-width: 1024px) {
-
-    /* We rely on the flex-1 and the surrounding content's height to define the image container's height */
     .lg\:-ml-6 {
         margin-left: -0.5rem;
     }
 }
 
-/* Smooth Magnetic Button */
 .btn-premium {
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
@@ -61,7 +50,6 @@ body {
     background-color: #f59e0b;
 }
 
-/* Highly Readable Tech Tags */
 .tech-pill {
     background-color: #fffbeb;
     /* Amber 50 */
@@ -77,7 +65,6 @@ body {
     letter-spacing: 0.02em;
 }
 
-/* Card Shadow & Border */
 .project-card-lg {
     border: 1px solid rgba(0, 0, 0, 0.03);
     transition: all 0.5s ease;
@@ -88,7 +75,6 @@ body {
     box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.08);
 }
 
-/* Mobile menu styles remain effective */
 .mobile-menu-overlay {
     z-index: 60;
     opacity: 0;
@@ -113,7 +99,6 @@ body {
     transform: translateY(0);
 }
 
-/* Custom Styles for New Sections */
 .service-boxes {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -183,7 +168,6 @@ body {
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: 80px;
-    /* Standard size for an icon box */
 }
 
 .article-container article:hover {
@@ -194,9 +178,7 @@ body {
 .tool-icon {
     width: 100%;
     height: 50px;
-    /* Fixed height for the image */
     object-fit: contain;
-    /* Ensure the image fits without cropping and maintains aspect ratio */
 }
 
 .section__text__p1 {
@@ -207,14 +189,11 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Custom CSS to justify text in the About section */
 #about p {
     text-align: justify;
     text-justify: inter-word;
-    /* Better justification control for some browsers */
 }
 
-/* Center align content in new box sections: projects, involvement, achievements (certifications) */
 .project-box-content,
 .involvement-box,
 .achievement-box {
@@ -233,4 +212,57 @@ body {
 
 .animate-scan {
     animation: scan 2.5s linear infinite;
+}
+
+@keyframes colorCycle {
+
+    0%,
+    100% {
+        filter: grayscale(0);
+        transform: scale(1.05);
+    }
+
+    50% {
+        filter: grayscale(1);
+        transform: scale(1.1);
+    }
+}
+
+.animate-image-loop {
+    animation: colorCycle 4s ease-in-out infinite;
+}
+
+.dynamic-image {
+    filter: grayscale(0);
+    transition: filter 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+    .dynamic-image:hover {
+        filter: grayscale(1);
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 1023px) {
+    .dynamic-image:active {
+        filter: grayscale(1);
+        transform: scale(1.2);
+    }
+}
+
+.dynamic-image {
+    filter: grayscale(0);
+    transition: filter 0.5s ease-out, transform 0.5s ease-out;
+}
+
+@media (min-width: 1024px) {
+    .dynamic-image:hover {
+        filter: grayscale(1);
+        transform: scale(1.05);
+    }
+}
+
+.is-zoomed {
+    filter: grayscale(1) !important;
 }
